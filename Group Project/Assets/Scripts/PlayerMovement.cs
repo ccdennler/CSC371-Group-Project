@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float turnSpeed = 20f;
-
     Animator m_Animator;
     Rigidbody m_Rigidbody;
     AudioSource m_AudioSource;
@@ -13,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     Quaternion m_Rotation = Quaternion.identity;
 
     void Start ()
-    {
+    {       
         m_Animator = GetComponent<Animator> ();
         m_Rigidbody = GetComponent<Rigidbody> ();
         m_AudioSource = GetComponent<AudioSource> ();
@@ -22,9 +21,10 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate ()
     {
         float horizontal = Input.GetAxis ("Horizontal");
-        float vertical = Input.GetAxis ("Vertical");
-        
+        float vertical = Input.GetAxis ("Vertical");   
         m_Movement.Set(horizontal, 0f, vertical);
+        m_Movement = Camera.main.transform.rotation * m_Movement;
+        m_Movement.y = 0f;
         m_Movement.Normalize ();
 
         bool hasHorizontalInput = !Mathf.Approximately (horizontal, 0f);
@@ -44,13 +44,16 @@ public class PlayerMovement : MonoBehaviour
             m_AudioSource.Stop ();
         }
 
-        Vector3 desiredForward = Vector3.RotateTowards (transform.forward, m_Movement, turnSpeed * Time.deltaTime, 0f);
+        Vector3 camRot = Camera.main.transform.rotation * new Vector3(1,1,1);
+        camRot.y = 0;
+        camRot.Normalize();
+        Vector3 desiredForward = Vector3.RotateTowards(transform.forward, m_Movement, turnSpeed * Time.deltaTime, 0f);        
         m_Rotation = Quaternion.LookRotation (desiredForward);
     }
 
     void OnAnimatorMove ()
-    {
-        m_Rigidbody.MovePosition (m_Rigidbody.position + m_Movement * m_Animator.deltaPosition.magnitude);
+    {   
         m_Rigidbody.MoveRotation (m_Rotation);
+        m_Rigidbody.MovePosition (m_Rigidbody.position + m_Movement * m_Animator.deltaPosition.magnitude);        
     }
 }
