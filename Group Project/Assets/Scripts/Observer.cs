@@ -6,40 +6,46 @@ public class Observer : MonoBehaviour
 {
     public Transform player;
     public GameEnding gameEnding;
+    public GameObject parent;
+    private HomingPatrol patrol;
 
-    public GameObject gameObject;
+    bool playerInSight;
 
-    bool m_IsPlayerInRange;
+    private void Start()
+    {
+        patrol = parent.GetComponent<HomingPatrol>();
+    }
 
-    void OnTriggerEnter (Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.transform == player)
         {
-            m_IsPlayerInRange = true;
+            playerInSight = true;
         }
     }
 
-    void OnTriggerExit (Collider other)
+    void OnTriggerExit(Collider other)
     {
         if (other.transform == player)
         {
-            m_IsPlayerInRange = false;
+            playerInSight = false;
+            patrol.StopFollowing();
         }
     }
 
-    void Update ()
+    void Update()
     {
-        if (m_IsPlayerInRange)
+        if (playerInSight)
         {
             Vector3 direction = player.position - transform.position + Vector3.up;
             Ray ray = new Ray(transform.position, direction);
             RaycastHit raycastHit;
-            
-            if (Physics.Raycast (ray, out raycastHit))
+
+            if (Physics.Raycast(ray, out raycastHit))
             {
                 if (raycastHit.collider.transform == player)
                 {
-                    Destroy(gameObject);
+                    patrol.FollowPlayer();
                 }
             }
         }
