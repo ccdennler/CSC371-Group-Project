@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public Camera camera;
     public float turnSpeed = 20f;
     Animator m_Animator;
     Rigidbody m_Rigidbody;
     AudioSource m_AudioSource;
     Vector3 m_Movement;
-    Quaternion m_Rotation = Quaternion.identity;
-
+    Quaternion m_Rotation = Quaternion.identity;    
     void Start ()
     {       
         m_Animator = GetComponent<Animator> ();
@@ -44,9 +44,6 @@ public class PlayerMovement : MonoBehaviour
             m_AudioSource.Stop ();
         }
 
-        Vector3 camRot = Camera.main.transform.rotation * new Vector3(1,1,1);
-        camRot.y = 0;
-        camRot.Normalize();
         Vector3 desiredForward = Vector3.RotateTowards(transform.forward, m_Movement, turnSpeed * Time.deltaTime, 0f);        
         m_Rotation = Quaternion.LookRotation (desiredForward);
     }
@@ -55,5 +52,14 @@ public class PlayerMovement : MonoBehaviour
     {   
         m_Rigidbody.MoveRotation (m_Rotation);
         m_Rigidbody.MovePosition (m_Rigidbody.position + m_Movement * m_Animator.deltaPosition.magnitude);        
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.name.Contains("Door"))
+        {
+            camera.transform.RotateAround(m_Rigidbody.position, Vector3.up, 90.0f);
+            Debug.Log("Door");
+        }
     }
 }
