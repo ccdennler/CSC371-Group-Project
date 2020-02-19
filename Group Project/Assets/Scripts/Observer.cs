@@ -5,7 +5,6 @@ using UnityEngine;
 public class Observer : MonoBehaviour
 {
     public Transform player;
-    public GameEnding gameEnding;
     public GameObject parent;
     private HomingPatrol patrol;
 

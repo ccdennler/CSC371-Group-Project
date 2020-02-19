@@ -164,6 +164,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5024542207124068256}
   - component: {fileID: 3046399464521835166}
+  - component: {fileID: 705433824311366920}
+  - component: {fileID: 6403777633350394935}
   m_Layer: 0
   m_Name: Ghost
   m_TagString: Untagged
@@ -249,6 +251,34 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.47393298, y: 0, z: -0.04242532}
     m_Extent: {x: 0.66882896, y: 0.26527417, z: 0.43575078}
   m_DirtyAABB: 0
+--- !u!114 &705433824311366920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2595510643693490728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0127c95dc928a40fb87e78a214446c66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  gameEnding: {fileID: 0}
+--- !u!136 &6403777633350394935
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2595510643693490728}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.30436563
+  m_Height: 1.3376582
+  m_Direction: 1
+  m_Center: {x: -0.011058986, y: 0.59348905, z: -0.045791686}
 --- !u!1 &2708935123341545753
 GameObject:
   m_ObjectHideFlags: 0
@@ -504,7 +534,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5075534488604402034}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.25
   m_Height: 1.2
@@ -536,7 +566,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.25
-  m_Speed: 1.5
+  m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -946,6 +976,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PointOfView
+      objectReference: {fileID: 0}
+    - target: {fileID: 4903280789943914309, guid: 8a6f7024e2eb90140bdf570ef653bac8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4953394414445174501, guid: 8a6f7024e2eb90140bdf570ef653bac8,
         type: 3}
