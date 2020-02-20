@@ -68,4 +68,34 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("Door");
         }
     }
+
+
+    //Move into dialogue script aka dialogue.text = Dialogue.GetDialogue("Punchy")
+    void OnCollisionStay(Collision collision)
+    {
+        //Check for a match with the specified name on any GameObject that collides with your GameObject
+        if (collision.gameObject.name == "Punchy")
+        {
+            characterName.gameObject.SetActive(true);
+            dialogueBackground.SetActive(true);
+            dialogue.gameObject.SetActive(true);
+            characterName.text = "Punchy";
+            dialogue.text = "Just chilling in the bathroom. I wonder where Rosie is... maybe her room?";
+        }
+        else if (collision.gameObject.name == "Rosie")
+        {
+            characterName.gameObject.SetActive(true);
+            dialogueBackground.SetActive(true);
+            dialogue.gameObject.SetActive(true);
+            characterName.text = "Punchy";
+            dialogue.text = "Detective you have to get me out of here! I cannot believe I am couped up in this ratty hotel.";
+        }
+        else
+        {
+            characterName.gameObject.SetActive(false);
+            dialogueBackground.SetActive(false);
+            dialogue.gameObject.SetActive(false);
+        }
+    }
+
 }
