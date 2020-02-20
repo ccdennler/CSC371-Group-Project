@@ -11,7 +11,6 @@ public class HomingPatrol : MonoBehaviour
 
     private bool followPlayer;
 
-
     int m_CurrentWaypointIndex;
 
     // Start is called before the first frame update
@@ -38,6 +37,7 @@ public class HomingPatrol : MonoBehaviour
 
     public void FollowPlayer()
     {
+        Debug.Log("following player");
         followPlayer = true;
     }
 

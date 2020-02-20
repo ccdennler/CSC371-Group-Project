@@ -7,6 +7,7 @@ public class WaypointPatrol : MonoBehaviour
 {
     public NavMeshAgent navMeshAgent;
     public Transform[] waypoints;
+    public Transform player;
 
     int m_CurrentWaypointIndex;
 
