@@ -945,7 +945,7 @@ PrefabInstance:
         type: 3}
       propertyPath: flashlight
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1538734302}
     - target: {fileID: 705433824311366920, guid: abeb186619cc7e6419cb81e1e4dfa162,
         type: 3}
       propertyPath: parent
@@ -1040,6 +1040,12 @@ NavMeshAgent:
     type: 3}
   m_PrefabInstance: {fileID: 519917424}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &771865047 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5075534488604402034, guid: 09143aed3593b475ea21c73e0788a2b3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1579082483}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &805581756
 GameObject:
   m_ObjectHideFlags: 0
@@ -1052,6 +1058,7 @@ GameObject:
   - component: {fileID: 805581758}
   - component: {fileID: 805581760}
   - component: {fileID: 805581761}
+  - component: {fileID: 805581757}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1059,6 +1066,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &805581757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 805581756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 296a8e3490e76914ba2974d59d54d4d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 6077229646317852079}
 --- !u!20 &805581758
 Camera:
   m_ObjectHideFlags: 0
@@ -1315,6 +1335,16 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 4012380625681614537}
+    - target: {fileID: -4431776279912181, guid: 09143aed3593b475ea21c73e0788a2b3,
+        type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 1117482827}
+    - target: {fileID: -4431776279912181, guid: 09143aed3593b475ea21c73e0788a2b3,
+        type: 3}
+      propertyPath: flashlight
+      value: 
+      objectReference: {fileID: 1538734302}
     - target: {fileID: 1176990128951978394, guid: 09143aed3593b475ea21c73e0788a2b3,
         type: 3}
       propertyPath: waypoints.Array.size
@@ -1354,7 +1384,7 @@ PrefabInstance:
         type: 3}
       propertyPath: flashlight
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1538734302}
     - target: {fileID: 3020798476852260557, guid: 09143aed3593b475ea21c73e0788a2b3,
         type: 3}
       propertyPath: parent
@@ -1500,7 +1530,7 @@ PrefabInstance:
         type: 3}
       propertyPath: flashlight
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1538734302}
     - target: {fileID: 705433824311366920, guid: abeb186619cc7e6419cb81e1e4dfa162,
         type: 3}
       propertyPath: parent
@@ -1828,6 +1858,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 48.708004, y: 0, z: 0}
+--- !u!4 &1538734302 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9181508549448620616, guid: e58a8494f35e17f45ba5bbffdfb92517,
+    type: 3}
+  m_PrefabInstance: {fileID: 4012380625681614536}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1579082483
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1860,6 +1896,16 @@ PrefabInstance:
       propertyPath: gameEnding
       value: 
       objectReference: {fileID: 5642716984738007026}
+    - target: {fileID: -4431776279912181, guid: 09143aed3593b475ea21c73e0788a2b3,
+        type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 771865047}
+    - target: {fileID: -4431776279912181, guid: 09143aed3593b475ea21c73e0788a2b3,
+        type: 3}
+      propertyPath: flashlight
+      value: 
+      objectReference: {fileID: 1538734302}
     - target: {fileID: 1176990128951978394, guid: 09143aed3593b475ea21c73e0788a2b3,
         type: 3}
       propertyPath: waypoints.Array.size
@@ -1889,12 +1935,12 @@ PrefabInstance:
         type: 3}
       propertyPath: flashlight
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1538734302}
     - target: {fileID: 3020798476852260557, guid: 09143aed3593b475ea21c73e0788a2b3,
         type: 3}
       propertyPath: parent
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 771865047}
     - target: {fileID: 5075534488604402034, guid: 09143aed3593b475ea21c73e0788a2b3,
         type: 3}
       propertyPath: m_Name
