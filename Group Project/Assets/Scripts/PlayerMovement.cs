@@ -13,6 +13,9 @@ public class PlayerMovement : MonoBehaviour
     Vector3 m_Movement;
     Quaternion m_Rotation = Quaternion.identity;
 
+    private float walk = 1.0f;
+    private float run = 2.0f;
+    private float move_speed;
     public Text characterName;
     public GameObject dialogueBackground;
     public Text dialogue;
@@ -22,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
         m_Animator = GetComponent<Animator>();
         m_Rigidbody = GetComponent<Rigidbody>();
         m_AudioSource = GetComponent<AudioSource>();
+        move_speed = walk;
     }
 
     void FixedUpdate()
@@ -52,12 +56,21 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 desiredForward = Vector3.RotateTowards(transform.forward, m_Movement, turnSpeed * Time.deltaTime, 0f);        
         m_Rotation = Quaternion.LookRotation (desiredForward);
+        
+        if(Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            move_speed = run;
+        }
+        if(Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            move_speed = walk;
+        }
     }
 
     void OnAnimatorMove ()
     {   
         m_Rigidbody.MoveRotation (m_Rotation);
-        m_Rigidbody.MovePosition (m_Rigidbody.position + m_Movement * m_Animator.deltaPosition.magnitude);        
+        m_Rigidbody.MovePosition (m_Rigidbody.position + m_Movement * m_Animator.deltaPosition.magnitude * move_speed);        
     }
 
     private void OnTriggerEnter(Collider other)
