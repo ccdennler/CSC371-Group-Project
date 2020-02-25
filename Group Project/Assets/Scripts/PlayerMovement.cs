@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public Camera camera;
+    public Camera cam;
     public float turnSpeed = 20f;
     Animator m_Animator;
     Rigidbody m_Rigidbody;
@@ -13,9 +13,12 @@ public class PlayerMovement : MonoBehaviour
     Vector3 m_Movement;
     Quaternion m_Rotation = Quaternion.identity;
 
-    private float walk = 1.0f;
-    private float run = 2.0f;
+    private const float walk = 1.0f;
+    private const float run = 2.0f;
     private float move_speed;
+    private Vector3 cam_offset = new Vector3(0, 16f, -10f);
+    private string cam_dir;
+
     public Text characterName;
     public GameObject dialogueBackground;
     public Text dialogue;
@@ -65,6 +68,7 @@ public class PlayerMovement : MonoBehaviour
         {
             move_speed = walk;
         }
+        cam.transform.position = cam_offset + m_Rigidbody.transform.position;
     }
 
     void OnAnimatorMove ()
@@ -75,10 +79,38 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.name.Contains("Door"))
+        if (other.gameObject.name.Contains("Door"))
         {
-            camera.transform.RotateAround(m_Rigidbody.position, Vector3.up, 90.0f);
-            Debug.Log("Door");
+            Vector3 rel_pos = transform.position - other.gameObject.transform.position;
+            Vector3 rel_dir = new Vector3(rel_pos.x, 0, rel_pos.z).normalized;
+            rel_dir = cam.transform.InverseTransformDirection(rel_dir);
+            if (rel_dir.x < 0 && cam_dir != "left")
+            {
+                Vector3 camRot = cam.transform.eulerAngles;
+                camRot.y += 90.0f;
+                cam.transform.eulerAngles = camRot;
+
+                cam_offset.x = -10f;
+                cam_offset.z = 0;
+
+                cam.transform.position = transform.position + cam_offset;                
+                
+                cam_dir = "left";
+            }
+            else if (rel_dir.x > 0 && cam_dir != "right")
+            {
+                Vector3 camRot = cam.transform.eulerAngles;
+                camRot.y += -90.0f;
+                cam.transform.eulerAngles = camRot;
+
+                cam_offset.x = 10f;
+                cam_offset.z = 0;
+
+                cam.transform.position = transform.position + cam_offset;
+                
+
+                cam_dir = "right";
+            }
         }
     }
 
@@ -108,7 +140,7 @@ public class PlayerMovement : MonoBehaviour
             characterName.gameObject.SetActive(false);
             dialogueBackground.SetActive(false);
             dialogue.gameObject.SetActive(false);
-        }
+        }        
     }
 
 }
