@@ -14,11 +14,6 @@ public class Movement : MonoBehaviour
     private bool isNearNPC = false;
     public string talkingTo = "";
 
-    public GameObject dialogueSystem;
-    public Text characterName;
-    public GameObject dialogueBackground;
-    public Text dialogue;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +23,6 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        dialogueSystem.SetActive(isTalking);
         if (!isTalking)
         {
             horizontalInput = Input.GetAxis("Horizontal");
@@ -50,7 +44,7 @@ public class Movement : MonoBehaviour
     void OnTriggerStay(Collider collision)
     {
         //Check for a match with the specified name on any GameObject that collides with your GameObject
-        if (collision.gameObject.name == "Madame")
+        if (collision.gameObject.tag == "NPC")
         {
             isNearNPC = true;
             talkingTo = collision.gameObject.name;
@@ -59,10 +53,10 @@ public class Movement : MonoBehaviour
 
     void OnTriggerExit(Collider collision)
     {
-        if (collision.gameObject.name == "Madame")
+        if (collision.gameObject.tag == "NPC")
         {
             isNearNPC = false;
-            talkingTo = collision.gameObject.name;
+            talkingTo = "";
         }
     }
 }
