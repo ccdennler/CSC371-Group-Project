@@ -428,7 +428,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1234589828
 GameObject:
@@ -443,7 +443,7 @@ GameObject:
   - component: {fileID: 1234589830}
   - component: {fileID: 1234589829}
   m_Layer: 0
-  m_Name: Door (1)
+  m_Name: Ghost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -638,7 +638,7 @@ GameObject:
   - component: {fileID: 1883806152}
   - component: {fileID: 1883806151}
   m_Layer: 0
-  m_Name: Door
+  m_Name: Ghost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -737,6 +737,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camera: {fileID: 693026658}
   turnSpeed: 20
+  characterName: {fileID: 0}
+  dialogueBackground: {fileID: 0}
+  dialogue: {fileID: 0}
+  lives: 9
 --- !u!1001 &2684934846736580769
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -787,7 +791,7 @@ PrefabInstance:
     - target: {fileID: 2684934847082859045, guid: 2f074c1d69ceac644bfb96b6faac854c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2684934847082859045, guid: 2f074c1d69ceac644bfb96b6faac854c,
         type: 3}
@@ -868,6 +872,11 @@ PrefabInstance:
       propertyPath: lives_text
       value: 
       objectReference: {fileID: 1647041203}
+    - target: {fileID: 3921620009599891812, guid: b84cbbbdbb44f984eb3ed3a929e2ccc5,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1931998974}
     - target: {fileID: 3921620009599891813, guid: b84cbbbdbb44f984eb3ed3a929e2ccc5,
         type: 3}
       propertyPath: m_Name
@@ -911,7 +920,7 @@ PrefabInstance:
     - target: {fileID: 3921620009599891819, guid: b84cbbbdbb44f984eb3ed3a929e2ccc5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3921620009599891819, guid: b84cbbbdbb44f984eb3ed3a929e2ccc5,
         type: 3}

@@ -4,24 +4,20 @@ using UnityEngine;
 using TMPro;
 public class GameManager : MonoBehaviour
 {
-    private int lives;
+    public GameObject player;
     public TextMeshProUGUI lives_text;
+    private int lives;
     // Start is called before the first frame update
     void Start()
     {
-        lives = 9;
-        lives_text.text = "x" + lives;        
+        lives = PlayerMovement.lives;
+        lives_text.text = lives.ToString();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    void UpdateLives()
-    {
-        lives--;
-        lives_text.text = "x" + lives;
+        lives = PlayerMovement.lives;
+        lives_text.text = lives.ToString();
     }
 }

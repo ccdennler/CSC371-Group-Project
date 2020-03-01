@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public Camera camera;
+    public Camera cam;
     public float turnSpeed = 20f;
     Animator m_Animator;
     Rigidbody m_Rigidbody;
@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
     public Text characterName;
     public GameObject dialogueBackground;
     public Text dialogue;
+
+    public static int lives = 9;  
 
     void Start()
     {
@@ -59,16 +61,6 @@ public class PlayerMovement : MonoBehaviour
         m_Rigidbody.MoveRotation (m_Rotation);
         m_Rigidbody.MovePosition (m_Rigidbody.position + m_Movement * m_Animator.deltaPosition.magnitude);        
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.name.Contains("Door"))
-        {
-            camera.transform.RotateAround(m_Rigidbody.position, Vector3.up, 90.0f);
-            Debug.Log("Door");
-        }
-    }
-
 
     //Move into dialogue script aka dialogue.text = Dialogue.GetDialogue("Punchy")
     void OnCollisionStay(Collision collision)
