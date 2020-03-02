@@ -40,29 +40,15 @@ public class CollidingObject : MonoBehaviour
     {
         if (other.transform == flashlight)
         {
-            /* Vector3 direction = player.position - transform.position + Vector3.up;
-            Ray ray = new Ray(transform.position, direction);
-            RaycastHit raycastHit;
+            Debug.Log("Hitting ghost.");
+            parent.transform.Rotate(Vector3.up, 20);
 
-            if (Physics.Raycast(ray, out raycastHit))
+            health -= 1;
+            if (health == 0)
             {
-                if (raycastHit.collider.transform == player)
-                { */
-                    Debug.Log("Hitting ghost.");
-                    parent.transform.Rotate(Vector3.up, 20);
-
-                    health -= 1;
-                    if (health == 0)
-                    {
-                        Destroy(parent);
-                        Debug.Log("Ghost killed.");
-                    }
-                /* }
-                else
-                {
-                    Debug.Log("Not hitting ghost.");
-                }
-            } */
+                Destroy(parent);
+                Debug.Log("Ghost killed.");
+            }
         }
     }
 
