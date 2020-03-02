@@ -6,14 +6,16 @@ using UnityEngine.UI;
 public class Game : MonoBehaviour
 {
 
-    public int stage = -1;
+    public int stage = -2;
     public GameObject player;
     public GameObject dialogueSystem;
     public GameObject intro;
+    public GameObject title;
     GameObject dialogue;
     Text characterName;
     TypewriterText typewriter;
     Movement playerMovement;
+    TypewriterText introText;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +26,10 @@ public class Game : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (stage == -2)
+        {
+            StartTitle();
+        }
         if (stage == -1)
         {
             StartIntroduction();
@@ -35,11 +41,22 @@ public class Game : MonoBehaviour
         }
     }
 
+    private void StartTitle()
+    {
+        title.SetActive(true);
+        if (Input.GetKeyDown("space"))
+        {
+            stage = -1;
+            title.SetActive(false);
+        }
+    }
 
 
     private void StartIntroduction()
     {
         intro.SetActive(true);
+        introText = intro.transform.GetChild(2).transform.GetComponent<TypewriterText>();
+        introText.fullText = "\nDear Detective Paws,\n\nRecently, a hoard of ghosts has taken\n\nup residence in my manor. Seeing as\n\nyou are the top detective, I request\n\nyour presence immediately.\n\n\t\tBest wishes, Madame Chatte.";
         if (Input.GetMouseButtonDown(0))
         {
             stage = 0;
