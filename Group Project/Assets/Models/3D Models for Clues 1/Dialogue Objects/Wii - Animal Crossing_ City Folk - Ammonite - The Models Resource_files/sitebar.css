@@ -1,0 +1,67 @@
+#sitebar {
+    background-color: #6191b9;
+    color: #ffffff;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 0px;
+    font-weight:bold;
+    line-height: 20px;
+    height: 20px;
+    width: 100%;
+    min-width: 980px;
+    padding: 0px;
+    clear: both;
+    z-index: 1000;
+    overflow: hidden;
+    box-shadow: inset 0px -10px 16px #467ead;
+}
+#sitebar a:link, #sitebar a:visited, #sitebar a:hover, #sitebar a:active {
+    font-size: 12px;
+    color: #ffffff;
+    display: inline-block;
+    padding: 0px 10px;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-left-style: solid;
+    border-right-style: solid;
+    vertical-align: top;
+}
+#vglinks {
+    float: left;
+    clear: left;
+}
+#sitelinks {
+    float: right;
+    clear: right;
+}
+
+/* Ad Display Fixes */
+div[id$="r-ad-header"] > div, div[id$="r-ad-footer"] > div {
+    top: 85px !important;
+}
+div[id$="r-ad-comments"] > div, div[id$="r-ad-content"] > div {
+    top: 245px !important;
+}
+div[id$="r-ad-sidebar"] > div {
+    top: 595px !important;
+}
+div[id*="r-ad-"] > div > a {
+    position: absolute;
+    right: 0px;
+    bottom: 15px;
+    height: 10px !important;
+    line-height: 10px !important;
+    background-color: #ffffff !important;
+    text-shadow: none !important;
+}
+img[src*="vid-io"] {
+    display: none;
+}
+
+/* Extras for Larger Screens */
+@media screen and (min-width: 767px) and (min-device-width: 767px) {
+    #sitebar {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+    }
+}

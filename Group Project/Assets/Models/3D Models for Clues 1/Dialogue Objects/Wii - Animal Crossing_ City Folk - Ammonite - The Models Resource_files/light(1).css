@@ -1,0 +1,65 @@
+.iconcontainer {
+    background-color: #e8e8e8;
+    border: 1px solid #5b5b5b;
+    box-shadow: 2px 2px 2px 0px #6d6d6d;
+}
+.iconheader {
+    color: #e8e8e8;
+    outline: 3px solid #e8e8e8;
+}
+.iconheadertext {
+    text-shadow: 0px 1px #000000;
+}
+.iconbody {
+    background-image: url(/resources/images/light/display/icon-background.png);
+    border-left: solid 2px #a2a2a2;
+    border-top: solid 2px #a2a2a2;
+    border-right: solid 1px #a2a2a2;
+    border-bottom: solid 1px #a2a2a2;
+}
+.gameiconcontainer {
+    background-color: #e8e8e8;
+    border: 1px solid #5b5b5b;
+    box-shadow: 2px 2px 2px 0px #6d6d6d;
+}
+.gameiconheader {
+    color: #e8e8e8;
+    outline: 3px solid #e8e8e8;
+}
+.gameiconheadertext {
+    text-shadow: 0px 1px #000000;
+}
+.gameiconbody {
+    background-color: #a2a2a2;
+    border-left: solid 2px #a2a2a2;
+    border-top: solid 2px #a2a2a2;
+    border-right: solid 1px #a2a2a2;
+    border-bottom: solid 1px #a2a2a2;
+}
+.bigiconcontainer {
+    background-color: #e8e8e8;
+    border: 1px solid #5b5b5b;
+    box-shadow: 2px 2px 2px 0px #6d6d6d;
+}
+.bigiconheader {
+    color: #e8e8e8;
+    outline: 3px solid #e8e8e8;
+}
+.bigiconheader {
+    background-color: #4d5ba3;
+    border-top: 1px solid #6f7eca;
+    border-left: 1px solid #6f7eca;
+    border-right: 1px solid #14288c;
+    border-bottom: 1px solid #14288c;
+}
+.bigiconheadertext {
+    text-shadow: 0px 2px #000000;
+}
+.bigiconbody {
+    background-image: url(/resources/images/light/display/bigicon-background.png);
+    background-color: #a2a2a2;
+    border-left: solid 2px #a2a2a2;
+    border-top: solid 2px #a2a2a2;
+    border-right: solid 1px #a2a2a2;
+    border-bottom: solid 1px #a2a2a2;
+}
