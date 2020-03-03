@@ -264,7 +264,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  parent: {fileID: 0}
+  flashlight: {fileID: 0}
   gameEnding: {fileID: 0}
+  navMesh: {fileID: 0}
+  health: 100
 --- !u!136 &6403777633350394935
 CapsuleCollider:
   m_ObjectHideFlags: 0
