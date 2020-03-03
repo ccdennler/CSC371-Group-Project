@@ -102,7 +102,7 @@ public class DialogueSystem : MonoBehaviour
         {
             if (stage == 0)
             {
-                return "Welcome to the manor Detective Paws. I was just baking a cake but lost all of the ingredients. Will you be so kind and help me?";
+                return "Welcome to the manor Detective Paws. I was just baking a cake but lost all of the ingredients. Will you be so kind and help me?.";
             }
             if (stage == 1)
             {
@@ -125,7 +125,7 @@ public class DialogueSystem : MonoBehaviour
         {
             if (stage == 0)
             {
-                return "Listen... I can't help you... Oh hello there, rude to interrupt!";
+                return "Listen... I can't help you... Oh hello there, rude to interrupt!.";
             }
             if (stage == 1)
             {
@@ -164,7 +164,7 @@ public class DialogueSystem : MonoBehaviour
             }
             if (stage == 4)
             {
-                return "My soooooooon. I loooooove yoooooou...... Gooooooodbye";
+                return "My soooooooon. I loooooove yoooooou...... Gooooooodbye..";
             }
         }
         return "";

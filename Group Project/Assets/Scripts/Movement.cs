@@ -14,19 +14,27 @@ public class Movement : MonoBehaviour
     private bool isNearNPC = false;
     public string talkingTo = "";
 
+    public GameObject flashlight;
+    bool flashlightOn = false;
+    Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        horizontalInput = Input.GetAxis("Horizontal");
+        verticalInput = Input.GetAxis("Vertical");
+        bool hasHorizontalInput = !Mathf.Approximately(horizontalInput, 0f);
+        bool hasVerticalInput = !Mathf.Approximately(verticalInput, 0f);
+        bool isWalking = hasVerticalInput;
+        //animator.SetBool("IsWalking", isWalking);
         if (!isTalking)
         {
-            horizontalInput = Input.GetAxis("Horizontal");
-            verticalInput = Input.GetAxis("Vertical");
             transform.Translate(Vector3.forward * Time.deltaTime * speed * verticalInput);
             transform.Rotate(Vector3.up * Time.deltaTime * turnSpeed * horizontalInput);
         }
@@ -39,6 +47,19 @@ public class Movement : MonoBehaviour
         else
             if (Input.GetMouseButtonDown(0))
             isTalking = false;
+        if (Input.GetMouseButtonDown(1))
+        {
+            if (flashlightOn)
+            {
+                flashlight.SetActive(false);
+                flashlightOn = false;
+            }
+            else
+            {
+                flashlight.SetActive(true);
+                flashlightOn = true;
+            }
+        }
     }
 
     void OnTriggerStay(Collider collision)
