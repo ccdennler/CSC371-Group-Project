@@ -950,7 +950,7 @@ GameObject:
   - component: {fileID: 2701863865896896819}
   - component: {fileID: 7438738072484405706}
   - component: {fileID: 3576288450122217075}
-  - component: {fileID: 142462114116109389}
+  - component: {fileID: -939604524912469949}
   - component: {fileID: 355967702596757054}
   - component: {fileID: 685090927300085920}
   m_Layer: 0
@@ -1027,7 +1027,7 @@ CapsuleCollider:
   m_Height: 1.4
   m_Direction: 1
   m_Center: {x: 0, y: 0.7, z: 0}
---- !u!114 &142462114116109389
+--- !u!114 &-939604524912469949
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1036,14 +1036,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6077229646317852079}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56b2cfb9174a093419d0f8db96a60eda, type: 3}
+  m_Script: {fileID: 11500000, guid: 3661baad9bde05b42b137191709293d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 0}
-  turnSpeed: 20
-  characterName: {fileID: 0}
-  dialogueBackground: {fileID: 0}
-  dialogue: {fileID: 0}
+  speed: 2
+  turnSpeed: 120
+  isTalking: 0
+  talkingTo: 
 --- !u!82 &355967702596757054
 AudioSource:
   m_ObjectHideFlags: 0
