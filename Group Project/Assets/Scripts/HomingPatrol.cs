@@ -37,7 +37,6 @@ public class HomingPatrol : MonoBehaviour
 
     public void FollowPlayer()
     {
-        Debug.Log("following player");
         followPlayer = true;
     }
 

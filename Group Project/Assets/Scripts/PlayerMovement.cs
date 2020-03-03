@@ -13,6 +13,9 @@ public class PlayerMovement : MonoBehaviour
     Vector3 m_Movement;
     Quaternion m_Rotation = Quaternion.identity;
 
+    public GameObject flashlight;
+    bool flashlightOn = false;
+
     public Text characterName;
     public GameObject dialogueBackground;
     public Text dialogue;
@@ -52,6 +55,20 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 desiredForward = Vector3.RotateTowards(transform.forward, m_Movement, turnSpeed * Time.deltaTime, 0f);        
         m_Rotation = Quaternion.LookRotation (desiredForward);
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            if (flashlightOn)
+            {
+                flashlight.SetActive(false);
+                flashlightOn = false;
+            }
+            else
+            {
+                flashlight.SetActive(true);
+                flashlightOn = true;
+            }
+        }
     }
 
     void OnAnimatorMove ()
