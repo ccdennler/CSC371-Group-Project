@@ -1,0 +1,117 @@
+/* Layout Stuff */
+#header {
+    background-color: #80aeef;
+}
+#userbox {
+    background-color: #6393d8;
+}
+#social {
+    background-color: #6393d8;
+}
+#headerad {
+    background-color: #99b8e5;
+}
+#cplinks {
+    background-color: #72a3e8;
+}
+#subscribe {
+    background-color: #72a3e8;
+}
+#nav a {
+    text-shadow: 1px 1px 1px #2e3649;
+}
+#nav-top {
+    background-color: #436eac;
+    border-bottom: 1px solid #284266;
+    box-shadow: 0px 1px 4px #3e658d;
+    text-shadow: 0px 0px 1px #a6acb6;
+}
+.nav-header {
+    background-color: #436eac;
+    text-shadow: 1px 1px 1px #2e3649;
+}
+.search_button {
+    border-left: 2px solid #8bbafc;
+    background-color: #4c87db;
+}
+.search_button:hover {
+    background-color: #345eb2;
+}
+.active {
+    background-color: #89b1ea;
+}
+.commentHeader {
+    background-color: #6393d8;
+}
+.commentContent {
+    background-color: #a2c2f0;
+}
+.display {
+    text-shadow: 1px 1px 1px #395e81;
+}
+.rowheader {
+    background-color: #6393d8;
+}
+.altrow0 {
+    background-color: #86afea;
+}
+.altrow1 {
+    background-color: #7ba6e2;
+}
+.rowfooter {
+    background-color: #6898dd;
+}
+.shadow {
+    text-shadow: 1px 1px 1px #395e81;
+}
+.button-title {
+    background-color: #86afea;
+    border: 2px #6393d8 solid;
+    box-shadow: 1px 2px 3px #395e81;
+}
+
+/* Updates */
+.updatetitle {
+    background-color: #6393d8;
+    text-shadow: 1px 1px 1px #2e3d49;
+}
+.updatetitle:after {
+    border-left-color: #4d5f79;
+}
+.updatemeta {
+    background-color: #a2c2f0;
+}
+div.updateconsolename {
+    background-color: #6393d8;
+}
+
+/* Category Page */
+#letters {
+    background-color: #4b7fc9;
+}
+#letters .active {
+    background-color: #6fa0e6;
+}
+.section {
+    background-color: #6393d8;
+    text-shadow: 1px 1px 1px #2e3d49;
+}
+.section:after {
+    border-left-color: #4d5f79;
+}
+
+/* Icons */
+.iconheader {
+    background-color: #4d5ba3;
+    border-top: 1px solid #6f7eca;
+    border-left: 1px solid #6f7eca;
+    border-right: 1px solid #14288c;
+    border-bottom: 1px solid #14288c;
+}
+.gameiconheader {
+    background-color: #4d5ba3;
+    border-top: 1px solid #6f7eca;
+    border-left: 1px solid #6f7eca;
+    border-right: 1px solid #14288c;
+    border-bottom: 1px solid #14288c;
+}
