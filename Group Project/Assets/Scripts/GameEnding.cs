@@ -12,12 +12,18 @@ public class GameEnding : MonoBehaviour
     public AudioSource exitAudio;
     public CanvasGroup caughtBackgroundImageCanvasGroup;
     public AudioSource caughtAudio;
+    private int lives;
 
     bool m_IsPlayerAtExit;
     bool m_IsPlayerCaught;
     float m_Timer;
     bool m_HasAudioPlayed;
-    
+
+    private void Start()
+    {
+        lives = PlayerMovement.lives;
+    }
+
     void OnTriggerEnter (Collider other)
     {
         if (other.gameObject == player)
@@ -29,6 +35,7 @@ public class GameEnding : MonoBehaviour
     public void CaughtPlayer ()
     {
         m_IsPlayerCaught = true;
+        PlayerMovement.lives--;
     }
 
     void Update ()

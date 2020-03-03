@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public Camera camera;
     public float turnSpeed = 20f;
+    static public int lives = 9;
     Animator m_Animator;
     Rigidbody m_Rigidbody;
     AudioSource m_AudioSource;
@@ -20,11 +21,12 @@ public class PlayerMovement : MonoBehaviour
     public GameObject dialogueBackground;
     public Text dialogue;
 
+    static public Vector3 startPos = new Vector3(-9.8f, 0, -3.2f);
     void Start()
     {
         m_Animator = GetComponent<Animator>();
         m_Rigidbody = GetComponent<Rigidbody>();
-        m_AudioSource = GetComponent<AudioSource>();
+        m_AudioSource = GetComponent<AudioSource>();        
     }
 
     void FixedUpdate()
