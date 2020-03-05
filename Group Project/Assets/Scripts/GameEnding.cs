@@ -13,24 +13,20 @@ public class GameEnding : MonoBehaviour
     public CanvasGroup caughtBackgroundImageCanvasGroup;
     public AudioSource caughtAudio;
     public Camera gameCamera;
-    private int lives;
+    public GameObject startPos;
 
     bool m_IsPlayerCaught;
     float m_Timer;
     bool m_HasAudioPlayed;
 
-    Vector3 originalPosition = new Vector3(-9.8f, 0, -3.2f);
-
     private void Start()
     {
-        lives = PlayerMovement.lives;
         caughtAudio = GetComponent<AudioSource>();
     }
 
     public void CaughtPlayer ()
     {
         m_IsPlayerCaught = true;
-        lives--;
         PlayerMovement.lives--;
     }
 
@@ -60,7 +56,7 @@ public class GameEnding : MonoBehaviour
         {
             if (doRestart)
             {
-                player.transform.position = originalPosition;
+                player.transform.position = startPos.transform.position;
                 player.transform.rotation = Quaternion.Euler(0, 0, 0);
                 m_IsPlayerCaught = false;
                 m_HasAudioPlayed = false;
