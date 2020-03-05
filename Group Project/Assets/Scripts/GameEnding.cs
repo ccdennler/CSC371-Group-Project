@@ -12,12 +12,14 @@ public class GameEnding : MonoBehaviour
     public AudioSource exitAudio;
     public CanvasGroup caughtBackgroundImageCanvasGroup;
     public AudioSource caughtAudio;
+    public Camera gameCamera;
     private int lives;
 
-    bool m_IsPlayerAtExit;
     bool m_IsPlayerCaught;
     float m_Timer;
     bool m_HasAudioPlayed;
+
+    Vector3 originalPosition = new Vector3(-9.8f, 0, -3.2f);
 
     private void Start()
     {
@@ -25,29 +27,21 @@ public class GameEnding : MonoBehaviour
         caughtAudio = GetComponent<AudioSource>();
     }
 
-    void OnTriggerEnter (Collider other)
-    {
-        if (other.gameObject == player)
-        {
-            m_IsPlayerAtExit = true;
-        }
-    }
-
     public void CaughtPlayer ()
     {
         m_IsPlayerCaught = true;
+        lives--;
         PlayerMovement.lives--;
     }
 
     void Update ()
     {
-        if (m_IsPlayerAtExit)
+        if (m_IsPlayerCaught)
         {
-            EndLevel (exitBackgroundImageCanvasGroup, false, exitAudio);
-        }
-        else if (m_IsPlayerCaught)
-        {
-            EndLevel (caughtBackgroundImageCanvasGroup, true, caughtAudio);
+            if (PlayerMovement.lives == 0)
+                EndLevel(caughtBackgroundImageCanvasGroup, false, caughtAudio);
+            else
+                EndLevel(caughtBackgroundImageCanvasGroup, true, caughtAudio);
         }
     }
 
@@ -58,6 +52,7 @@ public class GameEnding : MonoBehaviour
             audioSource.Play();
             m_HasAudioPlayed = true;
         }
+
         m_Timer += Time.deltaTime;
         imageCanvasGroup.alpha = m_Timer / fadeDuration;
 
@@ -65,11 +60,17 @@ public class GameEnding : MonoBehaviour
         {
             if (doRestart)
             {
-                SceneManager.LoadScene (0);
+                player.transform.position = originalPosition;
+                player.transform.rotation = Quaternion.Euler(0, 0, 0);
+                m_IsPlayerCaught = false;
+                m_HasAudioPlayed = false;
+                m_Timer = 0;
+                imageCanvasGroup.alpha = 0f;
             }
             else
             {
-                Application.Quit ();
+                PlayerMovement.lives = 9;
+                SceneManager.LoadScene(0);
             }
         }
     }

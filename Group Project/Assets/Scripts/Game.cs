@@ -62,7 +62,7 @@ public class Game : MonoBehaviour
     {
         intro.SetActive(true);
         introText = intro.transform.GetChild(2).transform.GetComponent<TypewriterText>();
-        introText.fullText = "\nDear Detective Paws,\n\nRecently, a hoard of ghosts has taken\n\nup residence in my manor. Seeing as\n\nyou are the top detective, I request\n\nyour presence immediately.\n\n\t\tBest wishes, Madame Chatte.";
+        introText.fullText = "\nDear Detective Paws,\n\nRecently, a horde of ghosts has taken\n\nup residence in my manor. Seeing as\n\nyou are the top detective, I request\n\nyour presence immediately.\n\n\t\tBest wishes, Madame Chatte.";
         if (Input.GetMouseButtonDown(0))
         {
             stage = 0;
