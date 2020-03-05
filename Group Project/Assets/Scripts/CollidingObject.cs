@@ -11,6 +11,7 @@ public class CollidingObject : MonoBehaviour
     public GameEnding gameEnding;
     public NavMeshAgent navMesh;
     public AudioSource ghostNoise;
+    public GameObject ghostDeath;
 
     public float health = 100.0f;
 
@@ -54,6 +55,8 @@ public class CollidingObject : MonoBehaviour
             }
             if (health == 0)
             {
+                Vector3 offset = new Vector3(0, 0.5f, 0);
+                Instantiate(ghostDeath, parent.transform.position + offset, Quaternion.Euler(-90, 0, 0));
                 Destroy(parent);
             }
         }
