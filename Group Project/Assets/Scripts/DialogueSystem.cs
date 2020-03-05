@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DialogueSystem : MonoBehaviour
 {
+    public static Clues clues;
+
     public static string GetText(string name, int stage)
     {
         if (name == "Madame")

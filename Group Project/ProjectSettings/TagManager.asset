@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Enemy
   - NPC
+  - Inventory Item
+  - Dialogue Item
+  - Interactable Object
+  - Clues
   layers:
   - Default
   - TransparentFX

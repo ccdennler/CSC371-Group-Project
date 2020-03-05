@@ -38,6 +38,7 @@ public class CollidingObject : MonoBehaviour
         }
     }
 
+
     void OnTriggerStay(Collider other)
     {
         if (other.transform == flashlight)

@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public Camera camera;
     public float turnSpeed = 20f;
     static public int lives = 9;
     Animator m_Animator;
@@ -34,7 +33,6 @@ public class PlayerMovement : MonoBehaviour
         float horizontal = Input.GetAxis ("Horizontal");
         float vertical = Input.GetAxis ("Vertical");   
         m_Movement.Set(horizontal, 0f, vertical);
-        m_Movement = Camera.main.transform.rotation * m_Movement;
         m_Movement.y = 0f;
         m_Movement.Normalize ();
 
@@ -83,7 +81,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if(other.name.Contains("Door"))
         {
-            camera.transform.RotateAround(m_Rigidbody.position, Vector3.up, 90.0f);
             Debug.Log("Door");
         }
     }
