@@ -31,9 +31,9 @@ public class Interactable : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.F))
             {
-           
+
                 Debug.Log("woot wooot");
-                if(gameObject.CompareTag("Inventory Item"))
+                if (gameObject.CompareTag("Inventory Item"))
                 {
                     for (int i = 0; i < inventory.items.Length; i++)
                     {
@@ -54,7 +54,7 @@ public class Interactable : MonoBehaviour
                     }
                     //Destroy(gameObject);
                 }
-                else if(gameObject.CompareTag("Dialogue Item"))
+                else if (gameObject.CompareTag("Dialogue Item"))
                 {
                     Debug.Log("HERE IS SOME DIALOGUE");
                 }

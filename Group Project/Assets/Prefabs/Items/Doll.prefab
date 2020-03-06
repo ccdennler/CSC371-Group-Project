@@ -27,14 +27,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8928102607340101524}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 1.51, y: 3.02, z: 4.77}
   m_LocalScale: {x: 0.566, y: 0.566, z: 0.566}
   m_Children:
   - {fileID: 1053122400229473880}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!23 &8928102607340101515
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   playerAgent: {fileID: 0}
   itemName: Doll
-  itemPreview: {fileID: 2800000, guid: 8f195825232424187a90c312de4afc16, type: 3}
+  itemPreview: {fileID: 2800000, guid: e8b81722eff1c4b048bc7951f3827748, type: 3}
   slot: {fileID: 0}
 --- !u!64 &8928102607340101526
 MeshCollider:
@@ -147,17 +147,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 9490271a12e4e4d0ea705f453682a5d7,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 9490271a12e4e4d0ea705f453682a5d7,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 9490271a12e4e4d0ea705f453682a5d7,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 9490271a12e4e4d0ea705f453682a5d7,
         type: 3}
@@ -172,7 +172,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 9490271a12e4e4d0ea705f453682a5d7,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 9490271a12e4e4d0ea705f453682a5d7,
         type: 3}
