@@ -9,8 +9,13 @@ public class DialogueSystem : MonoBehaviour
     public static bool talkProfessor = false;
     public static bool talkClaw = false;
     public static bool talkChives = false;
-    public static bool talkHops = false;
+    public static bool talkOlive = false;
     public static bool talkGhost = false;
+    public static bool stage0 = false;
+    public static bool stage1 = false;
+    public static bool stage2 = false;
+    public static bool stage3 = false;
+    public static bool stage4 = false;
 
     public static void ResetTalk()
     {
@@ -18,7 +23,7 @@ public class DialogueSystem : MonoBehaviour
         talkSnowball = false;
         talkClaw = false;
         talkChives = false;
-        talkHops = false;
+        talkOlive = false;
         talkGhost = false; 
         talkProfessor = false;
     }
@@ -149,12 +154,15 @@ public class DialogueSystem : MonoBehaviour
                 return "Ahhhh we all felt devastated by the passing of my old boss. I am glad I could see him once more..";
             }
         }
-        if (name == "Hops")
+        if (name == "Olive")
         {
-            talkHops = true;
+            talkOlive = true;
             if (stage == 0 && talkChives)
             {
+                Inventory.removeItem("Cake");
+                stage0 = true;
                 return "Oh, cake. Could you please figure out why this ghost is disturbing me??";
+                
             }
             else if (stage == 0)
             {
@@ -216,6 +224,7 @@ public class DialogueSystem : MonoBehaviour
                 Inventory.removeItem("Cake Mix");
                 Inventory.removeItem("Butter");
                 Inventory.removeItem("Egg");
+                Inventory.addItem("Cake");
                 return "Time to bake this cake!.";
             }
             return "Looks like the oven's preheated....";

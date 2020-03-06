@@ -20,7 +20,6 @@ public class Interactable : MonoBehaviour
             {
                 if(gameObject.CompareTag("Inventory Item"))
                 {
-                    Clues.logItem(itemName);
                     Inventory.addItem(itemName);
                     gameObject.SetActive(false);
                 }

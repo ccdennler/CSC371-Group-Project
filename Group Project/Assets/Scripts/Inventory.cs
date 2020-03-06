@@ -9,7 +9,7 @@ public class Inventory : MonoBehaviour
     public static int[] items = new int[8];
     public static GameObject[] slots = new GameObject[8];
     public GameObject[] slot;
-    public static GameObject[] availableItems = new GameObject[4];
+    public static GameObject[] availableItems = new GameObject[5];
     public GameObject[] available;
     public static string[] names = new string[8];
     private static int location;
@@ -38,10 +38,13 @@ public class Inventory : MonoBehaviour
 
     public static void removeItem(string name)
     {
-       for (int i = 0; i < items.Length; i++)
+        Debug.Log("here");
+        for (int i = 0; i < items.Length; i++)
         {
+            Debug.Log(name);
             if (names[i] == name)
             {
+                
                 GameObject tmpSlot = slots[i];
                 m_RawImage = tmpSlot.transform.GetChild(1).GetComponent<RawImage>();
                 GameObject image = tmpSlot.transform.GetChild(1).gameObject;
@@ -54,7 +57,6 @@ public class Inventory : MonoBehaviour
 
        for (int i = location; i < items.Length; i++)
         {
-            Debug.Log(i);
             if (items[i] != -1)
             {
                 
@@ -88,6 +90,7 @@ public class Inventory : MonoBehaviour
                 {
                     if (availableItems[y].name == name)
                     {
+                        Clues.logItem(name);
                         items[i] = 1; // makes sure that the slot is now considered FULL
                         GameObject slot1 = slots[i];
                         names[i] = name;

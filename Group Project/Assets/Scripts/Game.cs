@@ -40,7 +40,6 @@ public class Game : MonoBehaviour
         {
             CheckDialogue();
             ChangeStage();
-            
         }
     }
 
@@ -94,7 +93,7 @@ public class Game : MonoBehaviour
 
     private void ChangeStage()
     {
-        if (DialogueSystem.talkHops)
+        if (DialogueSystem.stage0)
         {
             stage = 1;
             DialogueSystem.ResetTalk();
