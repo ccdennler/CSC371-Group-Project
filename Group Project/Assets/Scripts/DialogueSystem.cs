@@ -4,12 +4,30 @@ using UnityEngine;
 
 public class DialogueSystem : MonoBehaviour
 {
-    public static Clues clues;
+    public static bool talkMadame = false;
+    public static bool talkSnowball = false;
+    public static bool talkProfessor = false;
+    public static bool talkClaw = false;
+    public static bool talkChives = false;
+    public static bool talkHops = false;
+    public static bool talkGhost = false;
+
+    public static void ResetTalk()
+    {
+        talkMadame = false;
+        talkSnowball = false;
+        talkClaw = false;
+        talkChives = false;
+        talkHops = false;
+        talkGhost = false; 
+        talkProfessor = false;
+    }
 
     public static string GetText(string name, int stage)
     {
         if (name == "Madame")
         {
+            talkMadame = true;
             if (stage == 0)
             {
                 return "Thank you for coming, Detective. Feel free to explore Meow Manor and see what you can find..";
@@ -33,6 +51,7 @@ public class DialogueSystem : MonoBehaviour
         }
         if (name == "Snowball")
         {
+            talkSnowball = true;
             if (stage == 0)
             {
                 return "who r u? ................ do u have 4nite on ur phone..?.";
@@ -56,6 +75,7 @@ public class DialogueSystem : MonoBehaviour
         }
         if (name == "Professor")
         {
+            talkProfessor = true;
             if (stage == 0)
             {
                 return "To be quite honest with you, I am absolutely excited at the idea of furthering my research..";
@@ -79,6 +99,7 @@ public class DialogueSystem : MonoBehaviour
         }
         if (name == "Claw" || name == "Scratch")
         {
+            talkClaw = true;
             if (stage == 0)
             {
                 return "New kitty! Wanna play with us?.";
@@ -102,52 +123,63 @@ public class DialogueSystem : MonoBehaviour
         }
         if (name == "Chives")
         {
-            if (stage == 0)
+            talkChives = true;
+            if (stage == 0 && Clues.hasCake)
+            {
+                return "Thank you, but the cake is not for me. Please give it to Hops, I need no credit..";
+            }
+            else if (stage == 0)
             {
                 return "Welcome to the manor Detective Paws. I was just baking a cake but lost all of the ingredients. Will you be so kind and help me?.";
             }
-            if (stage == 1)
+            else if (stage == 1)
             {
                 return "Thank you for the cake ingredients, this helps me out significantly. Go see if Madame Chatte needs any more help.";
             }
-            if (stage == 2)
+            else if (stage == 2)
             {
                 return "Misseur, even I do not know the code to the collection. No one has touched it ever since.. oh nevermind. Ignore me..";
             }
-            if (stage == 3)
+            else if (stage == 3)
             {
                 return "A doll? I do believe I have seen one around, but those twins are always littering their toys all over the mansion..";
             }
-            if (stage == 4)
+            else if (stage == 4)
             {
                 return "Ahhhh we all felt devastated by the passing of my old boss. I am glad I could see him once more..";
             }
         }
         if (name == "Hops")
         {
-            if (stage == 0)
+            talkHops = true;
+            if (stage == 0 && talkChives)
             {
-                return "Listen... I can't help you... Oh hello there, rude to interrupt!.";
+                return "Oh, cake. Could you please figure out why this ghost is disturbing me??";
             }
-            if (stage == 1)
+            else if (stage == 0)
             {
-                return "Just tending to the weeds. Haven't seen the Madame's necklace, sorry..";
+                return "I can't help you... Oh hello there, I'm currently occupied, sorry..";
             }
-            if (stage == 2)
+            else if (stage == 1)
+            {
+                return "Just tending to the weeds... please leave me alone..";
+            }
+            else if (stage == 2)
             {
                 return "A secret code? Look around you. There's patterns everywhere, even in my plants..";
             }
-            if (stage == 3)
+            else if (stage == 3)
             {
                 return "The twins sometimes play outside, maybe they lost it out here..";
             }
-            if (stage == 4)
+            else if (stage == 4)
             {
                 return "The heart needs to be tended to, just like the plants in my garden..";
             }
         }
         if (name == "Ghost")
         {
+            talkGhost = true;
             if (stage == 0)
             {
                 return "....";
@@ -168,6 +200,25 @@ public class DialogueSystem : MonoBehaviour
             {
                 return "My soooooooon. I loooooove yoooooou...... Gooooooodbye..";
             }
+        }
+        if (name == "Oven")
+        {
+            if (!(Clues.hasEgg && Clues.hasCakeMix && Clues.hasButter) && (Clues.hasEgg || Clues.hasCakeMix || Clues.hasButter))
+            {
+                return "I can't make a cake without all the ingredients..";
+            }
+            else if (Clues.hasEgg && Clues.hasButter && Clues.hasCakeMix)
+            {
+                Clues.hasEgg = false;
+                Clues.hasButter = false;
+                Clues.hasCakeMix = false;
+                Clues.hasCake = true;
+                Inventory.removeItem("Cake Mix");
+                Inventory.removeItem("Butter");
+                Inventory.removeItem("Egg");
+                return "Time to bake this cake!.";
+            }
+            return "Looks like the oven's preheated....";
         }
         return "";
     }

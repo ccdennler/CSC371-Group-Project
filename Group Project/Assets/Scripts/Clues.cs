@@ -4,32 +4,14 @@ using UnityEngine;
 
 public class Clues : MonoBehaviour
 {
-    public bool hasEgg;
-    public bool hasCakeMix;
-    public bool hasButter;
-    public bool hasCake;
-    public bool hasKey1;
-    public bool hasFur;
+    public static bool hasEgg = false;
+    public static bool hasCakeMix = false;
+    public static bool hasButter = false;
+    public static bool hasCake = false;
+    public static bool hasKey1 = false;
+    public static bool hasFur = false;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        hasEgg = false;
-        hasCakeMix = false;
-        hasButter = false;
-        hasCake = false;
-        hasKey1 = false;
-        hasFur = false;
-
-}
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void logItem(string name)
+    public static void logItem(string name)
     {
         if (name == "Cake Mix")
         {
