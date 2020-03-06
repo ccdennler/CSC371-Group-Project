@@ -28,4 +28,20 @@ public class Clues : MonoBehaviour
     {
         
     }
+
+    public void logItem(string name)
+    {
+        if (name == "Cake Mix")
+        {
+            hasCakeMix = true;
+        }
+        if (name == "Egg")
+        {
+            hasEgg = true;
+        }
+        if (name == "Butter")
+        {
+            hasButter = true;
+        }
+    }
 }

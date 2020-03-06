@@ -268,6 +268,9 @@ MonoBehaviour:
   flashlight: {fileID: 0}
   gameEnding: {fileID: 0}
   navMesh: {fileID: 0}
+  ghostNoise: {fileID: 0}
+  ghostDeath: {fileID: 7691050794231477593, guid: 46f2bf3686647490fa624a80d99f0fe0,
+    type: 3}
   health: 100
 --- !u!136 &3649580141834195913
 CapsuleCollider:
@@ -711,6 +714,8 @@ MonoBehaviour:
   flashlight: {fileID: 0}
   gameEnding: {fileID: 0}
   navMesh: {fileID: 0}
+  ghostNoise: {fileID: 0}
+  ghostDeath: {fileID: 0}
   health: 100
 --- !u!82 &-2364079605306284163
 AudioSource:

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DialogueSystem : MonoBehaviour
 {
+    public static Clues clues;
+
     public static string GetText(string name, int stage)
     {
         if (name == "Madame")
@@ -106,7 +108,7 @@ public class DialogueSystem : MonoBehaviour
             }
             if (stage == 1)
             {
-                return "The ghosts are agitated over an object? Professor Purrl is an expert on haunted relics. Find her perhaps..";
+                return "Thank you for the cake ingredients, this helps me out significantly. Go see if Madame Chatte needs any more help.";
             }
             if (stage == 2)
             {
