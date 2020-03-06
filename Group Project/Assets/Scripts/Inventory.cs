@@ -10,6 +10,7 @@ public class Inventory : MonoBehaviour
     public Interactable[] availableItems;
 
 
+
     void Start()
     {
         //Initialize Item Slots

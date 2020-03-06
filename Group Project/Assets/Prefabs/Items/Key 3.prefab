@@ -106,9 +106,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9f47bc5cb44941008b3caaad3c8792e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: {fileID: 0}
   playerAgent: {fileID: 0}
   itemName: Key 3
-  itemPreview: {fileID: 2800000, guid: 2df624f76d4b145c1a7e68de8f2603e7, type: 3}
+  itemPreview: {fileID: 2800000, guid: a408c854d27e5453bbce09a73095abd6, type: 3}
+  slot: {fileID: 0}
 --- !u!64 &6965097875989142441
 MeshCollider:
   m_ObjectHideFlags: 0

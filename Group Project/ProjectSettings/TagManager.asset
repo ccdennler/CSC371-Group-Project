@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Enemy
   - NPC
+  - Interactable Object
+  - Dialogue Item
+  - Inventory Item
+  - Egg
   layers:
   - Default
   - TransparentFX

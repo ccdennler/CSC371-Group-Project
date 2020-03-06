@@ -110,7 +110,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   playerAgent: {fileID: 0}
   itemName: Key 1
-  itemPreview: {fileID: 2800000, guid: 678e792f8f9e1484b9c60c40a2c46683, type: 3}
+  itemPreview: {fileID: 2800000, guid: a408c854d27e5453bbce09a73095abd6, type: 3}
   slot: {fileID: 0}
 --- !u!64 &8004052133560320128
 MeshCollider:

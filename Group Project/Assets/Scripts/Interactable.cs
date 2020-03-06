@@ -28,15 +28,15 @@ public class Interactable : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.F))
             {
-           
+
                 Debug.Log("woot wooot");
-                if(gameObject.CompareTag("Inventory Item"))
+                if (gameObject.CompareTag("Inventory Item"))
                 {
                     for (int i = 0; i < inventory.items.Length; i++)
                     {
                         if (inventory.items[i] == -1)
                         { // check whether the slot is EMPTY
-                   
+
                             inventory.items[i] = 1; // makes sure that the slot is now considered FULL
                             slot = inventory.slots[i];
                             m_RawImage = slot.transform.GetChild(1).GetComponent<RawImage>();
@@ -49,7 +49,7 @@ public class Interactable : MonoBehaviour
                     }
                     //Destroy(gameObject);
                 }
-                else if(gameObject.CompareTag("Dialogue Item"))
+                else if (gameObject.CompareTag("Dialogue Item"))
                 {
                     Debug.Log("HERE IS SOME DIALOGUE");
                 }
