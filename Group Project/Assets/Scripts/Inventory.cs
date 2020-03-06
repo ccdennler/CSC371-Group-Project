@@ -18,6 +18,7 @@ public class Inventory : MonoBehaviour
     static RawImage m_RawImage2;
 
 
+
     void Start()
     {
         for (int i = 0; i < slot.Length; i++)

@@ -110,7 +110,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   playerAgent: {fileID: 0}
   itemName: Egg
-  itemPreview: {fileID: 2800000, guid: 6cce4092369c44d558e8582d8ed905d4, type: 3}
+  itemPreview: {fileID: 2800000, guid: b3c6ada72a5eb431891e8bfdd5f115b7, type: 3}
   slot: {fileID: 0}
 --- !u!64 &1754209194366966420
 MeshCollider:

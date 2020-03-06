@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - NPC
+  - Egg
   - Inventory Item
   - Dialogue Item
   - Interactable Object
