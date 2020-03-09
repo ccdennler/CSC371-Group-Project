@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class Clues : MonoBehaviour
 {
@@ -21,7 +23,7 @@ public class Clues : MonoBehaviour
         hasKey1 = false;
         hasFur = false;
 
-}
+    }
 
     // Update is called once per frame
     void Update()
