@@ -11,9 +11,8 @@ public class Game : MonoBehaviour
     public GameObject dialogueSystem;
     public GameObject intro;
     public GameObject title;
-    public GameObject Cluez;
+    public GameObject dotdotdot;
     GameObject dialogue;
-    Clues clues;
     Text characterName;
     TypewriterText typewriter;
     Movement playerMovement;
@@ -24,8 +23,6 @@ public class Game : MonoBehaviour
     void Start()
     {
         playerMovement = player.GetComponent<Movement>();
-        DialogueSystem.clues = Cluez.GetComponent<Clues>();
-        clues = Cluez.GetComponent<Clues>();
     }
 
     // Update is called once per frame
@@ -43,7 +40,6 @@ public class Game : MonoBehaviour
         {
             CheckDialogue();
             ChangeStage();
-            CheckClues();
         }
     }
 
@@ -70,26 +66,26 @@ public class Game : MonoBehaviour
         }
     }
 
-    private void CheckClues()
-    {
-        if (clues.hasEgg && clues.hasCakeMix && clues.hasButter)
-        {
-            stage = 1;
-        }
-    }
-
     private void CheckDialogue()
     {
+        if (playerMovement.isNearNPC)
+        {
+            dotdotdot.transform.position = new Vector3(playerMovement.posNPC.x, dotdotdot.transform.position.y, playerMovement.posNPC.z);
+            dotdotdot.SetActive(true);
+        }
+        else
+        {
+            dotdotdot.SetActive(false);
+        }
         if (playerMovement.isTalking)
         {
+            dotdotdot.SetActive(false);
             if (dialogue == null)
             {
                 dialogue = Instantiate(dialogueSystem, new Vector3(0, 0, 0), Quaternion.identity);
                 dialogue.SetActive(true);
                 SetDialogue(playerMovement.talkingTo, stage);
             }
-
-
         }
         else
         {
@@ -107,6 +103,11 @@ public class Game : MonoBehaviour
 
     private void ChangeStage()
     {
+        if (DialogueSystem.stage0)
+        {
+            stage = 1;
+            DialogueSystem.ResetTalk();
+        }
         if (Input.GetKeyDown("x"))
         {
             if (stage == 4) {
@@ -116,6 +117,7 @@ public class Game : MonoBehaviour
             {
                 stage = stage + 1;
             }
+            DialogueSystem.ResetTalk();
         }
     }
 }

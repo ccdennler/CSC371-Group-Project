@@ -11,9 +11,11 @@ public class Movement : MonoBehaviour
     private float horizontalInput;
     private float verticalInput;
     public bool isTalking = false;
-    private bool isNearNPC = false;
+    public bool isNearNPC = false;
     public string talkingTo = "";
-
+    private bool isNearItem = false;
+    public string itemTo = "";
+    public Vector3 posNPC;
     public GameObject flashlight;
     bool flashlightOn = false;
     Animator animator;
@@ -38,7 +40,7 @@ public class Movement : MonoBehaviour
             transform.Translate(Vector3.forward * Time.deltaTime * speed * verticalInput);
             transform.Rotate(Vector3.up * Time.deltaTime * turnSpeed * horizontalInput);
         }
-        if (isNearNPC)
+        if (isNearNPC || isNearItem)
         {
             if (Input.GetMouseButtonDown(0))
                 isTalking = !isTalking;
@@ -65,20 +67,22 @@ public class Movement : MonoBehaviour
     void OnTriggerStay(Collider collision)
     {
         //Check for a match with the specified name on any GameObject that collides with your GameObject
-        if (collision.gameObject.tag == "NPC")
+        if (collision.gameObject.tag == "NPC" || collision.gameObject.tag == "Dialogue Item")
         {
             isNearNPC = true;
             talkingTo = collision.gameObject.name;
+            posNPC = collision.gameObject.transform.position;
         }
     }
 
     void OnTriggerExit(Collider collision)
     {
-        if (collision.gameObject.tag == "NPC")
+        if (collision.gameObject.tag == "NPC" || collision.gameObject.tag == "Dialogue Item")
         {
             isNearNPC = false;
             talkingTo = "";
         }
     }
+    
 
 }
