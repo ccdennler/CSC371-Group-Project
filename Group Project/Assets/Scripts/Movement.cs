@@ -11,11 +11,11 @@ public class Movement : MonoBehaviour
     private float horizontalInput;
     private float verticalInput;
     public bool isTalking = false;
-    private bool isNearNPC = false;
+    public bool isNearNPC = false;
     public string talkingTo = "";
     private bool isNearItem = false;
     public string itemTo = "";
-
+    public Vector3 posNPC;
     public GameObject flashlight;
     bool flashlightOn = false;
     Animator animator;
@@ -71,6 +71,7 @@ public class Movement : MonoBehaviour
         {
             isNearNPC = true;
             talkingTo = collision.gameObject.name;
+            posNPC = collision.gameObject.transform.position;
         }
     }
 

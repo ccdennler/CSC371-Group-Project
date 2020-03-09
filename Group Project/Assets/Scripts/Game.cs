@@ -11,7 +11,7 @@ public class Game : MonoBehaviour
     public GameObject dialogueSystem;
     public GameObject intro;
     public GameObject title;
-    public GameObject Cluez;
+    public GameObject dotdotdot;
     GameObject dialogue;
     Text characterName;
     TypewriterText typewriter;
@@ -68,8 +68,18 @@ public class Game : MonoBehaviour
 
     private void CheckDialogue()
     {
+        if (playerMovement.isNearNPC)
+        {
+            dotdotdot.transform.position = new Vector3(playerMovement.posNPC.x, dotdotdot.transform.position.y, playerMovement.posNPC.z);
+            dotdotdot.SetActive(true);
+        }
+        else
+        {
+            dotdotdot.SetActive(false);
+        }
         if (playerMovement.isTalking)
         {
+            dotdotdot.SetActive(false);
             if (dialogue == null)
             {
                 dialogue = Instantiate(dialogueSystem, new Vector3(0, 0, 0), Quaternion.identity);
