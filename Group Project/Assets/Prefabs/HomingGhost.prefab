@@ -269,6 +269,8 @@ MonoBehaviour:
   gameEnding: {fileID: 0}
   navMesh: {fileID: 0}
   ghostNoise: {fileID: 0}
+  ghostDeath: {fileID: 7691050794231477593, guid: 46f2bf3686647490fa624a80d99f0fe0,
+    type: 3}
   health: 100
 --- !u!136 &6403777633350394935
 CapsuleCollider:

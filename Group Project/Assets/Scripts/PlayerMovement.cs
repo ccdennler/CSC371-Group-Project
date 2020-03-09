@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public Camera camera;
     public float turnSpeed = 20f;
+    static public int lives = 9;
     Animator m_Animator;
     Rigidbody m_Rigidbody;
     AudioSource m_AudioSource;
@@ -20,11 +20,12 @@ public class PlayerMovement : MonoBehaviour
     public GameObject dialogueBackground;
     public Text dialogue;
 
+    static public Vector3 startPos = new Vector3(-9.8f, 0, -3.2f);
     void Start()
     {
         m_Animator = GetComponent<Animator>();
         m_Rigidbody = GetComponent<Rigidbody>();
-        m_AudioSource = GetComponent<AudioSource>();
+        m_AudioSource = GetComponent<AudioSource>();        
     }
 
     void FixedUpdate()
@@ -32,7 +33,6 @@ public class PlayerMovement : MonoBehaviour
         float horizontal = Input.GetAxis ("Horizontal");
         float vertical = Input.GetAxis ("Vertical");   
         m_Movement.Set(horizontal, 0f, vertical);
-        m_Movement = Camera.main.transform.rotation * m_Movement;
         m_Movement.y = 0f;
         m_Movement.Normalize ();
 
@@ -81,7 +81,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if(other.name.Contains("Door"))
         {
-            camera.transform.RotateAround(m_Rigidbody.position, Vector3.up, 90.0f);
             Debug.Log("Door");
         }
     }
