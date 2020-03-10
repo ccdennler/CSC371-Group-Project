@@ -1040,9 +1040,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  turnSpeed: 120
+  turnSpeed: 100
   isTalking: 0
+  isNearNPC: 0
   talkingTo: 
+  itemTo: 
+  posNPC: {x: 0, y: 0, z: 0}
   flashlight: {fileID: 0}
 --- !u!82 &355967702596757054
 AudioSource:
