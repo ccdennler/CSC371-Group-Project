@@ -12,6 +12,7 @@ public class Game : MonoBehaviour
     public GameObject intro;
     public GameObject title;
     public GameObject dotdotdot;
+    public GameObject boss;
     GameObject dialogue;
     Text characterName;
     TypewriterText typewriter;
@@ -23,6 +24,7 @@ public class Game : MonoBehaviour
     void Start()
     {
         playerMovement = player.GetComponent<Movement>();
+        boss.SetActive(false);
     }
 
     // Update is called once per frame
@@ -118,6 +120,10 @@ public class Game : MonoBehaviour
                 stage = stage + 1;
             }
             DialogueSystem.ResetTalk();
+        }
+        if(stage == 4)
+        {
+            boss.SetActive(true);
         }
     }
 }

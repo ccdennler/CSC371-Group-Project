@@ -16,8 +16,9 @@ public class Boss : MonoBehaviour
     {
         damageTaken = 0;
         spin = false;
-        spinTime = 150;
-        agent = GetComponent<NavMeshAgent>();       
+        spinTime = 200;
+        agent = GetComponent<NavMeshAgent>();
+        agent.speed = 4;
     }
 
     // Update is called once per frame
@@ -34,7 +35,8 @@ public class Boss : MonoBehaviour
         {
             agent.isStopped = false;
             spin = false;
-            spinTime = 150;
+            spinTime = 200;
+            damageTaken = 0;
         }
     }
 
@@ -50,14 +52,13 @@ public class Boss : MonoBehaviour
     {
         if (other.transform == flashlight.transform)
         {
-            agent.isStopped = true;
             if (damageTaken < 100)
             {
                 damageTaken++;
             }
             if(damageTaken >= 100)
             {
-                spin = true;
+                spin = true;              
             }           
         }
         
