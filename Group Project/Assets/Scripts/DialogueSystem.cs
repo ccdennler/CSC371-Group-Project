@@ -229,6 +229,10 @@ public class DialogueSystem : MonoBehaviour
             }
             return "Looks like the oven's preheated....";
         }
+        if (name == "Cake")
+        {
+            return "mmmmm, num nums -georgia";
+        }
         return "";
     }
 }
