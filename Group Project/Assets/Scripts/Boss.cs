@@ -16,7 +16,7 @@ public class Boss : MonoBehaviour
     {
         damageTaken = 0;
         spin = false;
-        spinTime = 100;
+        spinTime = 150;
         agent = GetComponent<NavMeshAgent>();       
     }
 
@@ -27,19 +27,30 @@ public class Boss : MonoBehaviour
         if (spin)
         {
             spinTime--;
-            this.transform.Rotate(Vector3.up, 20);          
+            this.transform.Rotate(Vector3.up, 20);
+            agent.isStopped = true;
         }
         if(spinTime <= 0)
         {
+            agent.isStopped = false;
             spin = false;
-            spinTime = 100;
+            spinTime = 150;
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.transform == target.transform)
+        {
+            Destroy(collision.gameObject);
+        }
+
+    }
     private void OnTriggerStay(Collider other)
     {
         if (other.transform == flashlight.transform)
         {
+            agent.isStopped = true;
             if (damageTaken < 100)
             {
                 damageTaken++;
