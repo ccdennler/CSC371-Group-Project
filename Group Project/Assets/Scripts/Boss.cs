@@ -27,7 +27,7 @@ public class Boss : MonoBehaviour
         if (spin)
         {
             spinTime--;
-            this.transform.Rotate(Vector3.up, 20);            
+            this.transform.Rotate(Vector3.up, 20);          
         }
         if(spinTime <= 0)
         {
