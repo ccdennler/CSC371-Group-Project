@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class HomingPatrol : MonoBehaviour
 {
     public GameObject player;
-    public NavMeshAgent navMeshAgent;
+    private NavMeshAgent navMeshAgent;
     public Transform[] waypoints;
 
     private bool followPlayer;
@@ -16,6 +16,7 @@ public class HomingPatrol : MonoBehaviour
     // Start is called before the first frame update
     public void Start()
     {
+        navMeshAgent = GetComponent<NavMeshAgent>();
         transform.position = waypoints[0].position;
         navMeshAgent.SetDestination(waypoints[1].position);
         followPlayer = false;
