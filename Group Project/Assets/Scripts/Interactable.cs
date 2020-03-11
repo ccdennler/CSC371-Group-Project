@@ -20,7 +20,25 @@ public class Interactable : MonoBehaviour
             {
                 if(gameObject.CompareTag("Inventory Item"))
                 {
-                    Inventory.addItem(itemName);
+                    if (Inventory.addItem(itemName))
+                    {
+                        gameObject.SetActive(false);
+                    }
+                }
+
+            }
+            if (Input.GetMouseButtonDown(0))
+            {
+                if (itemName == "SecretBookcase" && Clues.hasBook)
+                {
+                    gameObject.SetActive(false);
+                }
+                if (itemName == "LibDoor" && Clues.hasKey1)
+                {
+                    gameObject.SetActive(false);
+                }
+                if (itemName == "ColDoor" && Clues.hasKey2)
+                {
                     gameObject.SetActive(false);
                 }
             }
