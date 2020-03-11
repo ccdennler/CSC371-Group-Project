@@ -9,7 +9,7 @@ public class Inventory : MonoBehaviour
     public static int[] items = new int[8];
     public static GameObject[] slots = new GameObject[8];
     public GameObject[] slot;
-    public static GameObject[] availableItems = new GameObject[14];
+    public static GameObject[] availableItems = new GameObject[13];
     public GameObject[] available;
     public static string[] names = new string[8];
     private static int location;
@@ -80,7 +80,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public static void addItem(string name)
+    public static bool addItem(string name)
     {
         for (int i = 0; i < items.Length; i++)
         {
@@ -100,8 +100,9 @@ public class Inventory : MonoBehaviour
                         image.SetActive(true);
                     }
                 }
-                break;
+                return true;
             }
         }
+        return false;
     }
 }
