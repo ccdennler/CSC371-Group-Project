@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8928102607340101512}
   - component: {fileID: 8928102607340101513}
   - component: {fileID: 8928102607340101526}
+  - component: {fileID: 5222156838491348868}
   m_Layer: 0
   m_Name: Doll
   m_TagString: Inventory Item
@@ -84,7 +85,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 1.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8928102607340101513
 MonoBehaviour:
@@ -98,11 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9f47bc5cb44941008b3caaad3c8792e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 0}
-  playerAgent: {fileID: 0}
   itemName: Doll
   itemPreview: {fileID: 2800000, guid: e8b81722eff1c4b048bc7951f3827748, type: 3}
-  slot: {fileID: 0}
 --- !u!64 &8928102607340101526
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -117,6 +115,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &5222156838491348868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8928102607340101524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474024311235744d1b804407510f5bca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5469557910456931650
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -132,7 +142,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 9490271a12e4e4d0ea705f453682a5d7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 9490271a12e4e4d0ea705f453682a5d7,
         type: 3}

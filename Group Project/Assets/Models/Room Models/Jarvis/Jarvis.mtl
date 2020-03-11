@@ -1,0 +1,101 @@
+# Blender3D MTL File: Jarvis.blend
+# Material Count: 9
+newmtl material3_tubone_1.pn_tubone_1.png
+Ns 92.156863
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.250000 0.250000 0.250000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd tubone_1.png
+
+
+newmtl material0.003_otub4_0.png
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 0.000000
+illum 2
+map_Kd otub4_0.png
+
+
+newmtl material0.001_otub2_0.png
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 0.000000
+illum 2
+map_Kd otub2_0.png
+
+
+newmtl material1_tubone_3.pn_tubone_3.png
+Ns 92.156863
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.250000 0.250000 0.250000
+Ni 1.000000
+d 0.000000
+illum 2
+map_Kd tubone_3.png
+
+
+newmtl material0_tubone_4.pn_tubone_4.png
+Ns 92.156863
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.250000 0.250000 0.250000
+Ni 1.000000
+d 0.000000
+illum 2
+map_Kd tubone_4.png
+
+
+newmtl material0_otub1_0.png
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 0.000000
+illum 2
+map_Kd otub1_0.png
+
+
+newmtl material2_tubone_0.pn_tubone_0.png
+Ns 92.156863
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.250000 0.250000 0.250000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd tubone_0.png
+
+
+newmtl material0.002_otub3_0.png
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 0.000000
+illum 2
+map_Kd otub3_0.png
+
+
+newmtl material0.004_otub5_0.png
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 0.000000
+illum 2
+map_Kd otub5_0.png
+
+

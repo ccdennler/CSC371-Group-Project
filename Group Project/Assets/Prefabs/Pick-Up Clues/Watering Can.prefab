@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7983663983642018707}
   - component: {fileID: 7983663983642018706}
   - component: {fileID: 7983663983642018701}
+  - component: {fileID: 8495707240419158971}
   m_Layer: 0
   m_Name: Watering Can
   m_TagString: Inventory Item
@@ -98,11 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9f47bc5cb44941008b3caaad3c8792e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 0}
-  playerAgent: {fileID: 0}
   itemName: Watering Can
   itemPreview: {fileID: 2800000, guid: b2eb0f6c525fb474491122e8d8634a60, type: 3}
-  slot: {fileID: 0}
 --- !u!64 &7983663983642018701
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -117,6 +115,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &8495707240419158971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7983663983642018703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474024311235744d1b804407510f5bca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1099226111107776057
 PrefabInstance:
   m_ObjectHideFlags: 0
