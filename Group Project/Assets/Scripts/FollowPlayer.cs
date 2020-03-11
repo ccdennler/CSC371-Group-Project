@@ -7,7 +7,7 @@ public class FollowPlayer : MonoBehaviour
     public GameObject player;
     public float turnSpeed = 100f;
     private float horizontalInput;
-    private Vector3 offset = new Vector3(0, 3f, -1.5f);
+    private Vector3 offset = new Vector3(0, 3.5f, -2f);
     Movement playerMovement;
 
 

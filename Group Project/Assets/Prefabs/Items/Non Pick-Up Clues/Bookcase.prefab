@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!64 &9120482426966065514
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4026690484711658726}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -2432090755550338912, guid: afd2090e252b04fd1aba774d28532a60, type: 3}
 --- !u!1 &4370314825513949419
 GameObject:
   m_ObjectHideFlags: 0
@@ -10,9 +24,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4370314825513949416}
   - component: {fileID: 4370314825513949428}
-  - component: {fileID: 4370314825513949431}
-  - component: {fileID: 4370314825513949430}
   - component: {fileID: 4370314825513949417}
+  - component: {fileID: 2282008422980571210}
   m_Layer: 0
   m_Name: Bookcase
   m_TagString: Dialogue Item
@@ -73,36 +86,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &4370314825513949431
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4370314825513949419}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 4
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4370314825513949430
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4370314825513949419}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9f47bc5cb44941008b3caaad3c8792e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventory: {fileID: 0}
-  playerAgent: {fileID: 0}
-  itemName: Bookcase
-  itemPreview: {fileID: 2800000, guid: 8f195825232424187a90c312de4afc16, type: 3}
-  slot: {fileID: 0}
 --- !u!64 &4370314825513949417
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -117,6 +100,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &2282008422980571210
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4370314825513949419}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 2, z: 2}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1001 &1498583842252433522
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -204,6 +200,12 @@ PrefabInstance:
 --- !u!4 &5888103423760466792 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: afd2090e252b04fd1aba774d28532a60,
+    type: 3}
+  m_PrefabInstance: {fileID: 1498583842252433522}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4026690484711658726 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2534866581884222612, guid: afd2090e252b04fd1aba774d28532a60,
     type: 3}
   m_PrefabInstance: {fileID: 1498583842252433522}
   m_PrefabAsset: {fileID: 0}

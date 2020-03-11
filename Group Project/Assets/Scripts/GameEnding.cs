@@ -13,7 +13,7 @@ public class GameEnding : MonoBehaviour
     public CanvasGroup caughtBackgroundImageCanvasGroup;
     public AudioSource caughtAudio;
     public Camera gameCamera;
-    public GameObject startPos;
+    public Vector3 startPos;
 
     bool m_IsPlayerCaught;
     float m_Timer;
@@ -22,6 +22,7 @@ public class GameEnding : MonoBehaviour
     private void Start()
     {
         caughtAudio = GetComponent<AudioSource>();
+        startPos = player.transform.position;
     }
 
     public void CaughtPlayer ()
@@ -56,8 +57,8 @@ public class GameEnding : MonoBehaviour
         {
             if (doRestart)
             {
-                player.transform.position = startPos.transform.position;
-                player.transform.rotation = Quaternion.Euler(0, 0, 0);
+                player.transform.position = startPos;
+                //player.transform.rotation = Quaternion.Euler(0, 0, 0);
                 m_IsPlayerCaught = false;
                 m_HasAudioPlayed = false;
                 m_Timer = 0;
