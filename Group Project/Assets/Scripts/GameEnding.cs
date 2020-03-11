@@ -8,8 +8,6 @@ public class GameEnding : MonoBehaviour
     public float fadeDuration = 1f;
     public float displayImageDuration = 1f;
     public GameObject player;
-    public CanvasGroup exitBackgroundImageCanvasGroup;
-    public AudioSource exitAudio;
     public CanvasGroup caughtBackgroundImageCanvasGroup;
     public AudioSource caughtAudio;
     public Camera gameCamera;
