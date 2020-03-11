@@ -16,8 +16,12 @@ public class Clues : MonoBehaviour
     public static bool hasLetter = false;
     public static bool hasBook = false;
     public static bool hasCrowbar = false;
+    public static bool hasLetter1 = false;
+    public static bool hasLetter2 = false;
     public static bool hasLetterDad = false;
     public static bool hasDoll = false;
+    public static bool hasShovel = false;
+    
 
     public static void logItem(string name)
     {
@@ -45,13 +49,9 @@ public class Clues : MonoBehaviour
         {
             hasDoll = true;
         }
-        if (name == "LetterDad")
+        if (name == "Letter Dad")
         {
             hasLetterDad = true;
-        }
-        if (name == "Letter")
-        {
-            hasLetter = true;
         }
         if (name == "Crowbar")
         {
@@ -64,6 +64,18 @@ public class Clues : MonoBehaviour
         if (name == "Key 2")
         {
             hasKey2 = true;
+        }
+        if (name == "Letter 1")
+        {
+            hasLetter1 = true;
+        }
+        if (name == "Letter 2")
+        {
+            hasLetter2 = true;
+        }
+        if (name == "Shovel")
+        {
+            hasShovel = true;
         }
     }
 }
