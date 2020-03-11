@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8715839868838745388}
   - component: {fileID: 8715839868838745391}
   - component: {fileID: 8715839868838745395}
+  - component: {fileID: 2689279802789975905}
   m_Layer: 0
   m_Name: Cake
   m_TagString: Dialogue Item
@@ -98,11 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9f47bc5cb44941008b3caaad3c8792e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 0}
-  playerAgent: {fileID: 0}
   itemName: Cake
   itemPreview: {fileID: 2800000, guid: dafb5ba4ab3f34447a24ec01903375db, type: 3}
-  slot: {fileID: 0}
 --- !u!64 &8715839868838745395
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -117,6 +115,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2689279802789975905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8715839868838745385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474024311235744d1b804407510f5bca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2445522260631317117
 PrefabInstance:
   m_ObjectHideFlags: 0

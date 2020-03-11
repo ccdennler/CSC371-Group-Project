@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1507268351909556652}
   - component: {fileID: 1507268351909556653}
   - component: {fileID: 1507268351909556658}
+  - component: {fileID: -4587923974328203862}
   m_Layer: 0
   m_Name: Book
   m_TagString: Inventory Item
@@ -107,11 +108,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9f47bc5cb44941008b3caaad3c8792e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 0}
-  playerAgent: {fileID: 0}
   itemName: Book
   itemPreview: {fileID: 2800000, guid: 6ea8e1a62f5f34e5ea84820ac6665cf9, type: 3}
-  slot: {fileID: 0}
 --- !u!64 &1507268351909556658
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -126,6 +124,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &-4587923974328203862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507268351909556656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474024311235744d1b804407510f5bca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3997293761605632355
 PrefabInstance:
   m_ObjectHideFlags: 0

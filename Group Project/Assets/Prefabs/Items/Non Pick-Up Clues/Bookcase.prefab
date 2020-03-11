@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4370314825513949416}
   - component: {fileID: 4370314825513949428}
-  - component: {fileID: 4370314825513949431}
   - component: {fileID: 4370314825513949430}
   - component: {fileID: 4370314825513949417}
+  - component: {fileID: 2618416637066029932}
   m_Layer: 0
   m_Name: Bookcase
   m_TagString: Dialogue Item
@@ -73,19 +73,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &4370314825513949431
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4370314825513949419}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 4
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4370314825513949430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,11 +85,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9f47bc5cb44941008b3caaad3c8792e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 0}
-  playerAgent: {fileID: 0}
   itemName: Bookcase
   itemPreview: {fileID: 2800000, guid: 8f195825232424187a90c312de4afc16, type: 3}
-  slot: {fileID: 0}
 --- !u!64 &4370314825513949417
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -117,6 +101,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &2618416637066029932
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4370314825513949419}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.8276289, y: 4.6573715, z: 2.761277}
+  m_Center: {x: 0.025862731, y: 2.2310143, z: 0.19990198}
 --- !u!1001 &1498583842252433522
 PrefabInstance:
   m_ObjectHideFlags: 0
