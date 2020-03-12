@@ -87,6 +87,8 @@ public class DialogueSystem : MonoBehaviour
             }
             else if (stage == 3)
             {
+                Inventory.addItem("Ladder");
+                stage3 = true;
                 return "i got scared and left the haunted vase in the attic because i didn't know what to do.. will u help me get it plz? b4 my mom finds out..";
             }
             else if (stage == 4)
@@ -145,6 +147,8 @@ public class DialogueSystem : MonoBehaviour
             }
             else if (stage == 3 && Clues.hasDoll)
             {
+                GameObject.FindWithTag("Claw").transform.position = new Vector3(0, -10, 0);
+                GameObject.FindWithTag("Scratch").transform.position = new Vector3(0, -10, 0);
                 return "Give me that! Mine!";
             }
             else if (stage == 4)
@@ -275,7 +279,7 @@ public class DialogueSystem : MonoBehaviour
         {
             return "Oh. Its a photograph of Madame Chat at her husbands funeral… she looks so sad..";
         }
-        if (name == "Love Letter")
+        if (name == "Madame Letter")
         {
             return "Hmm. A love letter from Mr. Chatte to Madame..";
         }
@@ -308,6 +312,10 @@ public class DialogueSystem : MonoBehaviour
         {
             return "What a strange painting..";
         }
+        if (name == "Madame Painting")
+        {
+            return "Oh.. it's a painting of Madame Chatte at her husband's funeral.. she looks so sad..";
+        }
         if (name == "Fossil 1")
         {
             return "I don’t think the ghosts are Dino-Aged..";
@@ -316,10 +324,11 @@ public class DialogueSystem : MonoBehaviour
         {
             return "This fossil is from 30 years ago! Incredible!.";
         }
-        if (name == "Crate")
+        if (name == "Missing Crate")
         {
             if (Clues.hasCrowbar)
             {
+                Inventory.removeItem("Crowbar");
                 return "Whatever used to be in here sure isn’t anymore!.";
             } else
             {
@@ -347,7 +356,7 @@ public class DialogueSystem : MonoBehaviour
         }
         if (name == "Collection Door")
         {
-            if (Clues.hasKey1)
+            if (Clues.hasKey2)
             {
                 Inventory.removeItem("Key 2");
                 return "Unlocked!.";
@@ -356,6 +365,10 @@ public class DialogueSystem : MonoBehaviour
             {
                 return "Collection is locked..";
             }
+        }
+        if (name == "Papers")
+        {
+            return "Why were these papers just carelessly tossed on the floor....";
         }
         return "";
     }

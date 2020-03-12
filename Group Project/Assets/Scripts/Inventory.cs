@@ -9,7 +9,7 @@ public class Inventory : MonoBehaviour
     public static int[] items = new int[8];
     public static GameObject[] slots = new GameObject[8];
     public GameObject[] slot;
-    public static GameObject[] availableItems = new GameObject[13];
+    public static GameObject[] availableItems = new GameObject[16];
     public GameObject[] available;
     public static string[] names = new string[8];
     private static int location;
