@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class WaypointPatrol : MonoBehaviour
 {
-    public NavMeshAgent navMeshAgent;
+    private NavMeshAgent navMeshAgent;
     public Transform[] waypoints;
     public Transform player;
 
@@ -13,6 +13,7 @@ public class WaypointPatrol : MonoBehaviour
 
     public void Start()
     {
+        navMeshAgent = GetComponent<NavMeshAgent>();
         transform.position = waypoints[0].position;
         navMeshAgent.SetDestination(waypoints[1].position);
     }

@@ -1310,11 +1310,6 @@ PrefabInstance:
       propertyPath: parent
       value: 
       objectReference: {fileID: 1117482827}
-    - target: {fileID: 3020798476852260557, guid: 09143aed3593b475ea21c73e0788a2b3,
-        type: 3}
-      propertyPath: navMesh
-      value: 
-      objectReference: {fileID: 6077229646317852081}
     - target: {fileID: 3649580141834195913, guid: 09143aed3593b475ea21c73e0788a2b3,
         type: 3}
       propertyPath: m_IsTrigger
@@ -3890,6 +3885,7 @@ MonoBehaviour:
   - {fileID: 1742094018}
   - {fileID: 941437794}
   - {fileID: 335819972}
+  available: []
 --- !u!195 &6077229646317852081
 NavMeshAgent:
   m_ObjectHideFlags: 0

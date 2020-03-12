@@ -490,7 +490,6 @@ GameObject:
   - component: {fileID: 3540391287371809819}
   - component: {fileID: 1176990128951978394}
   - component: {fileID: 6986812540457888193}
-  - component: {fileID: -4431776279912181}
   - component: {fileID: -2364079605306284163}
   m_Layer: 0
   m_Name: PatrolGhost
@@ -508,7 +507,7 @@ Transform:
   m_GameObject: {fileID: 5075534488604402034}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 5024542207124068256}
   - {fileID: 4358288104198974899}
@@ -574,7 +573,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.25
-  m_Speed: 0.4
+  m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -697,26 +696,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &-4431776279912181
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5075534488604402034}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0127c95dc928a40fb87e78a214446c66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  parent: {fileID: 0}
-  flashlight: {fileID: 0}
-  gameEnding: {fileID: 0}
-  navMesh: {fileID: 0}
-  ghostNoise: {fileID: 0}
-  ghostDeath: {fileID: 0}
-  health: 100
 --- !u!82 &-2364079605306284163
 AudioSource:
   m_ObjectHideFlags: 0
