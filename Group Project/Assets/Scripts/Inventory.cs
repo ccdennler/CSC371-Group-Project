@@ -88,7 +88,7 @@ public class Inventory : MonoBehaviour
             {
                 for (int y = 0; y < availableItems.Length; y++)
                 {
-                    if (availableItems[y].name == name)
+                    if (availableItems[y].name == name && !existsItem(name))
                     {
                         Clues.logItem(name);
                         items[i] = 1; // makes sure that the slot is now considered FULL
@@ -98,8 +98,21 @@ public class Inventory : MonoBehaviour
                         GameObject image = slot1.transform.GetChild(1).gameObject;
                         m_RawImage.texture = availableItems[y].GetComponent<Interactable>().itemPreview;
                         image.SetActive(true);
+
+                        return true;
                     }
                 }
+            }
+        }
+        return false;
+    }
+
+    private static bool existsItem(string name)
+    {
+        for(int i = 0;i < names.Length; i++)
+        {
+            if(names[i] == name)
+            {
                 return true;
             }
         }
