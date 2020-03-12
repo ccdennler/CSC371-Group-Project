@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.AI;
 
 public class Boss : MonoBehaviour
@@ -44,7 +45,7 @@ public class Boss : MonoBehaviour
     {
         if(collision.transform == target.transform)
         {
-            Destroy(collision.gameObject);
+            SceneManager.LoadScene(0);
         }
 
     }
@@ -52,11 +53,11 @@ public class Boss : MonoBehaviour
     {
         if (other.transform == flashlight.transform)
         {
-            if (damageTaken < 100)
+            if (damageTaken < 50)
             {
                 damageTaken++;
             }
-            if(damageTaken >= 100)
+            if(damageTaken >= 50)
             {
                 spin = true;              
             }           
