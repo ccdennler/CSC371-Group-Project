@@ -16,6 +16,8 @@ public class Movement : MonoBehaviour
     private bool isNearItem = false;
     public string itemTo = "";
     public Vector3 posNPC;
+    public float overheatLevel;
+    public bool overheated;
     public GameObject flashlight;
     bool flashlightOn = false;
     Animator animator;
@@ -24,6 +26,8 @@ public class Movement : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        overheatLevel = 0;
+        overheated = false;
     }
 
     // Update is called once per frame
@@ -46,17 +50,31 @@ public class Movement : MonoBehaviour
                 isTalking = !isTalking;
             
         }
-        else
-            if (Input.GetMouseButtonDown(0))
+        else if (Input.GetMouseButtonDown(0))
             isTalking = false;
-        if (Input.GetMouseButtonDown(1))
+        if (flashlightOn)
         {
-            if (flashlightOn)
+            if (!isTalking)
+                overheatLevel++;
+            if (Input.GetMouseButtonDown(1))
             {
                 flashlight.SetActive(false);
                 flashlightOn = false;
             }
+            if (overheatLevel > 100)
+            {
+                overheated = true;
+                flashlight.SetActive(false);
+                flashlightOn = false;
+            }
+        }
+        else
+        {
+            if (overheatLevel > 0)
+                overheatLevel = overheatLevel - 2;
             else
+                overheated = false;
+            if (Input.GetMouseButtonDown(1) && !overheated)
             {
                 flashlight.SetActive(true);
                 flashlightOn = true;
