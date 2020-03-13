@@ -16,6 +16,7 @@ public class DialogueSystem : MonoBehaviour
     public static bool stage2 = false;
     public static bool stage3 = false;
     public static bool stage4 = false;
+    public static bool stage25 = false;
     public static bool black = false;
 
     public static void ResetTalk()
@@ -147,8 +148,7 @@ public class DialogueSystem : MonoBehaviour
             }
             else if (stage == 3 && Clues.hasDoll)
             {
-                GameObject.FindWithTag("Claw").transform.position = new Vector3(0, -10, 0);
-                GameObject.FindWithTag("Scratch").transform.position = new Vector3(0, -10, 0);
+                stage25 = true;
                 return "Give me that! Mine!";
             }
             else if (stage == 4)
@@ -369,6 +369,15 @@ public class DialogueSystem : MonoBehaviour
         if (name == "Papers")
         {
             return "Why were these papers just carelessly tossed on the floor....";
+        }
+
+        if (name == "Dirt")
+        {
+            return "Just a bunch of dirt. Looks fun to play in..";
+        }
+        if (name == "Piano")
+        {
+            return "This piano is so out of tune....";
         }
         return "";
     }

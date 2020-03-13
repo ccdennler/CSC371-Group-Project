@@ -53,11 +53,11 @@ public class Boss : MonoBehaviour
     {
         if (other.transform == flashlight.transform)
         {
-            if (damageTaken < 50)
+            if (damageTaken < 5)
             {
                 damageTaken++;
             }
-            if(damageTaken >= 50)
+            if(damageTaken >= 5)
             {
                 spin = true;              
             }           

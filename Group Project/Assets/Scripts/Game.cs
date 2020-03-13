@@ -7,6 +7,7 @@ public class Game : MonoBehaviour
 {
 
     public int stage = -2;
+    public int lives = 9;
     public GameObject player;
     public GameObject dialogueSystem;
     public GameObject intro;
@@ -179,10 +180,20 @@ public class Game : MonoBehaviour
             Madame.transform.rotation = Quaternion.Euler(0, 180, 0);
             Chives.transform.position = new Vector3(32, 2, 10);
             Chives.transform.rotation = Quaternion.Euler(0, 180, 0);
-            Claw.transform.position = new Vector3(-42.4f, 2, 1.2f);
-            Claw.transform.rotation = Quaternion.Euler(0, 180, 0);
-            Scratch.transform.position = new Vector3(-41f, 2, 1.3f);
-            Scratch.transform.rotation = Quaternion.Euler(0, 180, 0);
+            if (DialogueSystem.stage25)
+            {
+                Claw.transform.position = new Vector3(0, -10, 0);
+                Claw.transform.rotation = Quaternion.Euler(0, 180, 0);
+                Scratch.transform.position = new Vector3(0, -10, 0);
+                Scratch.transform.rotation = Quaternion.Euler(0, 180, 0);
+            }
+            else
+            {
+                Claw.transform.position = new Vector3(-42.4f, 2, 1.2f);
+                Claw.transform.rotation = Quaternion.Euler(0, 180, 0);
+                Scratch.transform.position = new Vector3(-41f, 2, 1.3f);
+                Scratch.transform.rotation = Quaternion.Euler(0, 180, 0);
+            }
             Professor.transform.position = new Vector3(-36, 7.2f, 9);
             Professor.transform.rotation = Quaternion.Euler(0, 90, 0);
             Hops.transform.position = new Vector3(-7.5f, 1, 40);

@@ -20,6 +20,7 @@ public class Movement : MonoBehaviour
     public bool overheated;
     public GameObject flashlight;
     bool flashlightOn = false;
+    public static int lives = 9;
     Animator animator;
 
     // Start is called before the first frame update
@@ -61,7 +62,7 @@ public class Movement : MonoBehaviour
                 flashlight.SetActive(false);
                 flashlightOn = false;
             }
-            if (overheatLevel > 100)
+            if (overheatLevel > 150)
             {
                 overheated = true;
                 flashlight.SetActive(false);

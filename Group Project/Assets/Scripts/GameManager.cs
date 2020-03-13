@@ -5,19 +5,20 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     private int lives;
-    public TextMeshProUGUI lives_text;    
+    public TextMeshProUGUI lives_text;
+    public GameObject game;
+    Game games;
     // Start is called before the first frame update
     void Start()
     {
-        lives = PlayerMovement.lives;
-        lives_text.text = "x" + lives;        
+        games = game.GetComponent<Game>();
+        lives_text.text = "x" + games.lives;        
     }
 
     // Update is called once per frame
     void Update()
     {
-        lives = PlayerMovement.lives;
-        lives_text.text = "x" + lives;
+        lives_text.text = "x" + games.lives;
     }
 
     void UpdateLives()

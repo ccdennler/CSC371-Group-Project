@@ -9,7 +9,7 @@ public class Inventory : MonoBehaviour
     public static int[] items = new int[8];
     public static GameObject[] slots = new GameObject[8];
     public GameObject[] slot;
-    public static GameObject[] availableItems = new GameObject[16];
+    public static GameObject[] availableItems = new GameObject[17];
     public GameObject[] available;
     public static string[] names = new string[8];
     private static int location;
@@ -88,7 +88,7 @@ public class Inventory : MonoBehaviour
             {
                 for (int y = 0; y < availableItems.Length; y++)
                 {
-                    if (availableItems[y].name == name && !existsItem(name))
+                    if (availableItems[y].name == name)
                     {
                         Clues.logItem(name);
                         items[i] = 1; // makes sure that the slot is now considered FULL
@@ -102,18 +102,6 @@ public class Inventory : MonoBehaviour
                         return true;
                     }
                 }
-            }
-        }
-        return false;
-    }
-
-    private static bool existsItem(string name)
-    {
-        for(int i = 0;i < names.Length; i++)
-        {
-            if(names[i] == name)
-            {
-                return true;
             }
         }
         return false;
