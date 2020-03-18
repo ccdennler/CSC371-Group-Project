@@ -5,15 +5,14 @@ using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public float turnSpeed = 20f;
+    static public int lives = 9;
     Animator m_Animator;
     Rigidbody m_Rigidbody;
     AudioSource m_AudioSource;
-
-    public float turnSpeed = 20f;
-    static public int lives = 9;
     Vector3 m_Movement;
     Quaternion m_Rotation = Quaternion.identity;
-       
+
     public GameObject flashlight;
     bool flashlightOn = false;
 

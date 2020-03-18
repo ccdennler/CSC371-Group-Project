@@ -10,23 +10,33 @@ public class Movement : MonoBehaviour
     public float turnSpeed = 120f;
     private float horizontalInput;
     private float verticalInput;
+
     public bool isTalking = false;
     public bool isNearNPC = false;
     public string talkingTo = "";
+    public Vector3 posNPC;
+
     private bool isNearItem = false;
     public string itemTo = "";
-    public Vector3 posNPC;
+    
     public float overheatLevel;
     public bool overheated;
     public GameObject flashlight;
     bool flashlightOn = false;
+    
     public static int lives = 9;
     Animator animator;
+
+    AudioSource audio;
+    public AudioClip flashlightSound;
+    public AudioClip pickup;
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
+        audio = GetComponent<AudioSource>();
+
         overheatLevel = 0;
         overheated = false;
     }
@@ -59,14 +69,16 @@ public class Movement : MonoBehaviour
                 overheatLevel++;
             if (Input.GetMouseButtonDown(1))
             {
-                flashlight.SetActive(false);
-                flashlightOn = false;
+                audio.clip = flashlightSound;
+                audio.Play();
+                Invoke("OffFlashlight", 0.25f);
             }
             if (overheatLevel > 150)
             {
                 overheated = true;
-                flashlight.SetActive(false);
-                flashlightOn = false;
+                audio.clip = flashlightSound;
+                audio.Play();
+                Invoke("OffFlashlight", 0.25f);
             }
         }
         else
@@ -77,10 +89,22 @@ public class Movement : MonoBehaviour
                 overheated = false;
             if (Input.GetMouseButtonDown(1) && !overheated)
             {
-                flashlight.SetActive(true);
-                flashlightOn = true;
+                audio.clip = flashlightSound;
+                audio.Play();
+                Invoke("OnFlashlight", 0.25f);
             }
         }
+    }
+    void OnFlashlight()
+    {
+        flashlight.SetActive(true);
+        flashlightOn = true;
+    }
+
+    void OffFlashlight()
+    {
+        flashlight.SetActive(false);
+        flashlightOn = false;
     }
 
     void OnTriggerStay(Collider collision)
