@@ -10,8 +10,10 @@ public class CollidingObject : MonoBehaviour
     public NavMeshAgent navMesh;
     public AudioSource ghostNoise;
     public GameObject ghostDeath;
+    public GameObject flashlight;
 
     public float health = 100.0f;
+    private bool attacking = false;
 
     private float savespeed;
     private Quaternion saverot;
@@ -32,6 +34,7 @@ public class CollidingObject : MonoBehaviour
         }
         if (other.name.Equals("Beam"))
         {
+            attacking = true;
             navMesh.speed = 0;
             saverot = parent.transform.rotation;
         }
@@ -52,7 +55,6 @@ public class CollidingObject : MonoBehaviour
             }
             if (health == 0)
             {
-                Debug.Log("Ghost killed");
                 Vector3 offset = new Vector3(0, 0.5f, 0);
                 Instantiate(ghostDeath, parent.transform.position + offset, Quaternion.Euler(-90, 0, 0));
                 Destroy(parent);
@@ -64,14 +66,23 @@ public class CollidingObject : MonoBehaviour
     {
         if (other.name.Equals("Beam"))
         {
-            navMesh.speed = savespeed + 0.1f;
-            savespeed = navMesh.speed;
-            parent.transform.rotation = saverot;
+            resetMovement();
         }
+    }
+
+    void resetMovement()
+    {
+        attacking = false;
+        navMesh.speed = savespeed + 0.1f;
+        savespeed = navMesh.speed;
+        parent.transform.rotation = saverot;
     }
 
     void Update()
     {
-
+        if (!flashlight.active && attacking)
+        {
+            resetMovement();
+        }
     }
 }
