@@ -1046,6 +1046,8 @@ MonoBehaviour:
   talkingTo: 
   itemTo: 
   posNPC: {x: 0, y: 0, z: 0}
+  overheatLevel: 0
+  overheated: 0
   flashlight: {fileID: 0}
 --- !u!82 &355967702596757054
 AudioSource:

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 public class GameBossManager : MonoBehaviour
 {
     private int piecesLeft;
@@ -17,5 +18,11 @@ public class GameBossManager : MonoBehaviour
     {
         piecesLeft = BossBattle.piecesLeft;
         piecesText.text = "Pieces Left: " + piecesLeft;
+
+        if(piecesLeft <= 0)
+        {
+            Game.stage = 4;
+            SceneManager.LoadScene("Demo");
+        }
     }
 }

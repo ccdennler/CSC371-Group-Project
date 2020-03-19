@@ -88,9 +88,9 @@ public class DialogueSystem : MonoBehaviour
             }
             else if (stage == 3)
             {
-                Inventory.addItem("Ladder");
+                Inventory.addItem("Key 3");
                 stage3 = true;
-                return "i got scared and left the haunted vase in the attic because i didn't know what to do.. will u help me get it plz? b4 my mom finds out..";
+                return "i got scared and left a haunted vase in the attic through the lab.. will u help me get it plz? b4 my mom finds out..";
             }
             else if (stage == 4)
             {
@@ -148,6 +148,7 @@ public class DialogueSystem : MonoBehaviour
             }
             else if (stage == 3 && Clues.hasDoll)
             {
+                Inventory.removeItem("Doll");
                 stage25 = true;
                 return "Give me that! Mine!";
             }

@@ -12,6 +12,7 @@ public class Clues : MonoBehaviour
     public static bool hasCake = false;
     public static bool hasKey1 = false;
     public static bool hasKey2 = false;
+    public static bool hasKey3 = false;
     public static bool hasNecklace = false;
     public static bool hasLetter = false;
     public static bool hasBook = false;
@@ -64,6 +65,10 @@ public class Clues : MonoBehaviour
         if (name == "Key 2")
         {
             hasKey2 = true;
+        }
+        if (name == "Key 3")
+        {
+            hasKey3 = true;
         }
         if (name == "Letter 1")
         {
