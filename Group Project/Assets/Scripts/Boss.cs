@@ -45,7 +45,7 @@ public class Boss : MonoBehaviour
     {
         if(collision.transform == target.transform)
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene("BossScene");
         }
 
     }

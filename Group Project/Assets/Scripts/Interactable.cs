@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Interactable : MonoBehaviour
 {
@@ -43,23 +44,27 @@ public class Interactable : MonoBehaviour
             {
                 if (itemName == "SecretBookcase" && Clues.hasBook)
                 {
-                    gameObject.SetActive(false);
+                    Destroy(gameObject);
                 }
                 if (itemName == "LibDoor" && Clues.hasKey1)
                 {
-                    gameObject.SetActive(false);
+                    Destroy(gameObject);
                 }
                 if (itemName == "ColDoor" && Clues.hasKey2)
                 {
-                    gameObject.SetActive(false);
+                    Destroy(gameObject);
                 }
                 if (itemName == "Dirt" && Clues.hasShovel)
                 {
-                    gameObject.SetActive(false);
+                    Destroy(gameObject);
                 }
                 if (itemName == "Missing Crate" && Clues.hasCrowbar)
                 {
-                    gameObject.SetActive(false);
+                    Destroy(gameObject);
+                }
+                if (itemName == "Ladder" && Clues.hasKey3)
+                {
+                    SceneManager.LoadScene("BossScene");
                 }
             }
         }
