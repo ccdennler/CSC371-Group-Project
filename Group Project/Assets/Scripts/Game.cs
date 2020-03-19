@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Game : MonoBehaviour
 {
 
-    public int stage = -2;
+    public static int stage = -2;
     public int lives = 9;
     public GameObject player;
     public GameObject dialogueSystem;
